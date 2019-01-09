@@ -1,2 +1,17 @@
-# create-PPTC-PDX-oncoprints
-As part of an overall strategy for improving therapies for childhood cancers, the PPTC seeks to develop models for the types of tumors that will be encountered in early phase clinical testing by establishing patient derived xenografts (PDXs) from high-risk childhood cancers refractory to current standard of care treatments. Genomic profiling of these models is required to enable PPTC investigators to develop robust "responder hypotheses" when drug activity is observed. With funding provided by <a href="https://www.alexslemonade.org" target="_blank"> Alex's Lemonade Stand Foundation</a>, we genomically characterize a major subset of 262 PDX models. We use whole exome sequencing, transcriptome sequencing, and SNPArray to characterize the tumor models. The focus on DNA and RNA sequencing data mirrors the current standard practice in most clinical diagnostics lab that use these technologies to detect the spectrum of targetable mutations, gene amplifications, and gene fusion events relevant to preclinical drug development.
+##Create PPTC PDX oncoprints by histology using WES mutations, RNA Fusions, and Copy Number data
+<b>Jo Lynne Rokita, Alvin Farrel, 2019</b>
+
+Here, we provide scripts to enable reproducible generation of Manuscript Figure 2: oncoprints by PDX histology.
+
+Funding provided by <a href="https://www.alexslemonade.org" target="_blank"> Alex's Lemonade Stand Foundation</a> and <a href= "http://www.ncipptc.org/" target = "_blank"> National Cancer Institute's Pediatric Preclinical Testing Consortium</a>.
+
+## File input requirements
+
+## Software versions used
+
+## Pipeline
+
+```
+#Set up directories relevant files in the following script and run
+RUN-create-full-oncoprint.R
+```
