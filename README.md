@@ -1,5 +1,5 @@
 ## Create PPTC PDX oncoprints by histology using WES mutations, RNA Fusions, and Copy Number data
-<b>Jo Lynne Rokita, Alvin Farrel, 2019</b>
+<b>Jo Lynne Rokita, Alvin Farrel, Khushbu Patel 2019</b>
 
 Here, we provide scripts to enable reproducible generation of Manuscript Figure 2: oncoprints by PDX histology.
 
