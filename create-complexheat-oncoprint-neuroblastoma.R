@@ -41,11 +41,10 @@ df_phase <- sample_df[colnames(mat.clean), "Phase", drop = FALSE]
 df_sex <- sample_df[colnames(mat.clean), "Sex", drop = FALSE]
 df_age <- sample_df[colnames(mat.clean), "Age", drop = FALSE]
 df_1pdel <- sample_df[colnames(mat.clean), "1p36.33", drop = FALSE]
-df_1qgain <- sample_df[colnames(mat.clean), "1q24.3", drop = FALSE]
 df_17qgain <- sample_df[colnames(mat.clean), "17q24.1", drop = FALSE]
 df_11qdel <- sample_df[colnames(mat.clean), "11q24.3", drop = FALSE]
 
-df_anno <- cbind(df_hist, df_phase, df_sex, df_age, df_11qdel, df_17qgain, df_1pdel, df_1qgain)
+df_anno <- cbind(df_hist, df_phase, df_sex, df_age, df_11qdel, df_17qgain, df_1pdel)
 
 #create annotation objects
 heat_anno = HeatmapAnnotation(df = df_anno,
@@ -56,8 +55,7 @@ heat_anno = HeatmapAnnotation(df = df_anno,
                                                           c("#4F94CD", "#48D1CC", "#FFFACD", "#FF8C00", "#EE2C2C", "#171717")), 
                                         `17q24.1` = `17q24.1`,
                                          `11q24.3` = `11q24.3`,
-                                         `1p36.33` = `1p36.33`,
-                                         `1q24.3` = `1q24.3`), 
+                                         `1p36.33` = `1p36.33`), 
                               annotation_height = 1,
                               na_col = "whitesmoke")
 

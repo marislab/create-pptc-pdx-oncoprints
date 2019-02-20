@@ -44,7 +44,7 @@ for (each in sub.hists){
                                 annotation_height = 1, na_col = "whitesmoke")
  
   pdf(paste(mainDir,subDirHist, "/", Sys.Date(), "-", each, "-oncoprint-goi-mut-cn-fusions.pdf", sep = ""),
-      height = 16, width = 11)
+      height = 17, width = 11)
   store.plot <- oncoPrint(mat.clean, get_type = function(x) strsplit(x, ";")[[1]],
                           ##keep rhabdos separated by histology
                           #column_order = sample_order,

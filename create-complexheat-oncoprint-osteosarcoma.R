@@ -4,10 +4,12 @@ clin.sub <- subset(clin, DNA.Part.of.PPTC == "yes")
 ###add arm level dels/amps to annotation
 class <- read.delim(paste0(pptc.folder, "Data/classifiers/output/classifier_scores_with_clinical_and_alterations.tsv"), 
                   as.is = T, header = T, check.names = F)
+##deduplicate rows
+class.dedup <- unique(class)
 
 ##fix header to enable merge
-colnames(class)[colnames(class) == "sample_id"] <- "Model"
-class2 <- class[, c("Model", "tp53_score")] 
+colnames(class.dedup)[colnames(class.dedup) == "sample_id"] <- "Model"
+class2 <- class.dedup[, c("Model", "tp53_score")] 
 clin.class <- merge(clin.sub, class2, all = T)
 
 ###call new matrix

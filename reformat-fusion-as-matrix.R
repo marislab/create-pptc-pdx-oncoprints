@@ -1,7 +1,6 @@
 #### Read collapsed Fusion File ####
-Fusion_File = read.delim("~/Box Sync/PPTC-genomics-collaboration/Manuscript/tables/fusion-results/DriverFusions_Collapsed_v2.txt",
+Fusion_File = read.delim("~/Box Sync/PPTC-genomics-collaboration/Manuscript/tables/fusion-results/DriverFusions_Collapsed.txt",
                          sep = "\t", header = T, as.is = T)
-
 #### Get unique list of models from the 3rd column (Models) ####
 Model_List = strsplit(as.character(Fusion_File$Models),split = ", ")
 Model_List.unique = unique(unlist(Model_List))

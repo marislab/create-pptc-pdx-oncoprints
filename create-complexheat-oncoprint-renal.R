@@ -40,12 +40,14 @@ colnames(df_hist)[colnames(df_hist) == "Histology.Detailed"] <- "Histology"
 df_phase <- sample_df[colnames(mat.clean), "Phase", drop = FALSE]
 df_sex <- sample_df[colnames(mat.clean), "Sex", drop = FALSE]
 df_age <- sample_df[colnames(mat.clean), "Age", drop = FALSE]
+df_1p <- sample_df[colnames(mat.clean), "1p", drop = FALSE]
 df_1q <- sample_df[colnames(mat.clean), "1q", drop = FALSE]
 df_11p13 <- sample_df[colnames(mat.clean), "11p13", drop = FALSE]
 df_11p15 <- sample_df[colnames(mat.clean), "11p15.5", drop = FALSE]
+df_16q <- sample_df[colnames(mat.clean), "16q", drop = FALSE]
 df_Xq11 <- sample_df[colnames(mat.clean), "Xq11.2", drop = FALSE]
 
-df_anno <- cbind(df_hist, df_phase, df_sex, df_age, df_1q, df_11p13, df_11p15, df_Xq11)
+df_anno <- cbind(df_hist, df_phase, df_sex, df_age, df_1p, df_1q, df_11p13, df_11p15, df_16q, df_Xq11)
 
 #create annotation objects
 heat_anno = HeatmapAnnotation(df = df_anno,
@@ -54,9 +56,11 @@ heat_anno = HeatmapAnnotation(df = df_anno,
                                          Sex = sexcol,
                                          Age = colorRamp2(c(0, 5, 10, 15, 20, 45), 
                                                           c("#4F94CD", "#48D1CC", "#FFFACD", "#FF8C00", "#EE2C2C", "#171717")), 
-                                        `1q` = `1q`,
+                                         `1p` = `1p`,
+                                         `1q` = `1q`,
                                          `11p13` = `11p13`,
                                          `11p15.5` = `11p15.5`,
+                                         `16q` = `16q`,
                                          `Xq11.2` = `Xq11.2`), 
                               annotation_height = 1,
                               na_col = "whitesmoke")
