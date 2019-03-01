@@ -26,7 +26,7 @@ pptc.folder <- "~/Box Sync/PPTC-genomics-collaboration/"
 script.folder <- "~/Box Sync/PPTC-genomics-collaboration/Manuscript/scripts/oncoprint-r-scripts/"
 
 #load file for harmonization of gene IDs
-gene.ids <- read.delim(paste0(pptc.folder, "Data/Hugo_Symbols/2019-02-04-Hugo-Symbols-approved.txt"),
+gene.ids <- read.delim(paste0(pptc.folder, "Data/Hugo_Symbols/2019-02-14-Hugo-Symbols-approved.txt"),
                        sep = "\t", as.is = T, header = T)
 ##load clinical file
 clin <- read.delim(paste0(pptc.folder, "Data/clinical/2019-02-09-pdx-clinical-final-for-paper.txt"), as.is = T, header = T)
@@ -60,7 +60,7 @@ source(paste0(script.folder, "create-mut-sigs-matrix.R"))
 ###fix IC-2664
 
 ###focal CN matrix
-focal.cn.mat <- read.delim(paste0(pptc.folder, "Manuscript/scripts/focal-cn/2019-02-13-short_cn_matrix.txt"),as.is=TRUE,check.names=FALSE)
+focal.cn.mat <- read.delim(paste0(pptc.folder, "Manuscript/scripts/focal-cn/2019-02-27-short_cn_matrix_fpkm1.txt"),as.is=TRUE,check.names=FALSE)
 
 #### Read fusion file ####
 source(paste0(script.folder, "reformat-fusion-as-matrix.R"))
