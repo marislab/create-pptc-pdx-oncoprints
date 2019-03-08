@@ -114,10 +114,7 @@ store.plot <- oncoPrint(mat.clean, get_type = function(x) strsplit(x, ";")[[1]],
 print(store.plot)
 
 write.table(sample_df[,c("Model", "Histology.Detailed", "Phase", "Sex")], 
-            paste0(paste(pptc.folder,"Manuscript/figures/oncoprints/", 
-                         
-                         
-                         , "/", Sys.Date(), 
+            paste0(paste0(subDirHist,"/", Sys.Date(), 
                          "-", hist, "-oncoprint-sampleorder.txt", sep = "")), sep = "\t", col.names = T, 
             row.names = F, quote = F)
 
@@ -141,7 +138,7 @@ print(ggplot(log.mut.order.df, aes(x = order, y = log.mut.order)) +
         theme(axis.text.x = element_text(angle = 90, hjust = 1)))
 
 write.table(as.data.frame(log.mut.order), 
-            paste0(pptc.folder,"Manuscript/figures/oncoprints/", each, "/", Sys.Date(), 
+            paste0(subDirHist,"/", each, "/", Sys.Date(), 
                    "-", each, "-", hist, "-oncoprint-mutorder.txt"), sep = "\t", col.names = F, 
             row.names = T, quote = F)
 dev.off()
