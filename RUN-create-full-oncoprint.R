@@ -20,7 +20,7 @@ mainDir <- "~/pptc-pdx-oncoprints/"
 dataDir <- "~/pptc-pdx-oncoprints/data/"
 script.folder <- "~/create-pptc-pdx-oncoprints/"
 
-# create new directories in home
+# create new directories in mainDir
 dir.create(file.path(mainDir,"onco-out"))
 subDir <- paste0(mainDir,"onco-out/")
 
