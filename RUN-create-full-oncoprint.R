@@ -14,22 +14,32 @@ library(ComplexHeatmap)
 library(deconstructSigs)
 library(data.table)
 
+# Setting working directory
+setwd("~")
+mainDir <- "~/pptc-pdx-oncoprints/"
+dataDir <- "~/pptc-pdx-oncoprints/data/"
+script.folder <- "~/create-pptc-pdx-oncoprints/"
+
+# create new directories in home
+dir.create(file.path(mainDir,"onco-out"))
+subDir <- "~/pptc-pdx-oncoprints/onco-out/"
+
 ###create directories for saving files
-mainDir <- "~/Box Sync/PPTC-genomics-collaboration/Manuscript/scripts/"
-subDir <- "onco-out/"
+#mainDir <- "~/Box Sync/PPTC-genomics-collaboration/Manuscript/scripts/"
+#subDir <- "onco-out/"
 #subDir <- "test/"
 
 ifelse(!dir.exists(file.path(mainDir, subDir)), dir.create(file.path(mainDir, subDir)), "Directory exists!")
 
 #set directories for saving files, specify histology of interest
-pptc.folder <- "~/Box Sync/PPTC-genomics-collaboration/"
-script.folder <- "~/Box Sync/PPTC-genomics-collaboration/Manuscript/scripts/oncoprint-r-scripts/"
+#pptc.folder <- "~/Box Sync/PPTC-genomics-collaboration/"
+#script.folder <- "~/Box Sync/PPTC-genomics-collaboration/Manuscript/scripts/oncoprint-r-scripts/"
 
 #load file for harmonization of gene IDs
-gene.ids <- read.delim(paste0(pptc.folder, "Data/Hugo_Symbols/2019-02-14-Hugo-Symbols-approved.txt"),
+gene.ids <- read.delim(paste0(dataDir,"2019-02-14-Hugo-Symbols-approved.txt"),
                        sep = "\t", as.is = T, header = T)
 ##load clinical file
-clin <- read.delim(paste0(pptc.folder, "Data/clinical/2019-02-09-pdx-clinical-final-for-paper.txt"), as.is = T, header = T)
+clin <- read.delim(paste0(dataDir, "pptc-pdx-clinical-web.txt"), as.is = T, header = T)
 clin.pptc <- subset(clin, Model.Part.of.PPTC == "yes")
 #write.table(clin.pptc, paste0(pptc.folder, "Data/clinical/2019-02-09-pdx-clinical-final-for-paper.txt"), col.names = T, row.names = F, quote = F, sep = "\t")
 
@@ -41,7 +51,7 @@ source(paste0(pptc.folder, "Manuscript/figures/oncoprints/mutation-color-functio
 source(paste0(pptc.folder, "Manuscript/figures/oncoprints/demog-color-function.R"))
 
 ###load MAF file into WD and into maftools
-load("~/Box Sync/PPTC-genomics-collaboration/Pedcbio-upload/2019-02-14-allpdx-clean-maf-240.rda", verbose = T)
+load(paste0(dataDir,"2019-02-14-allpdx-clean-maf-240.rda"), verbose = T)
 
 sort(unique(pptc.merge$Tumor_Sample_Barcode))
 
@@ -49,7 +59,7 @@ sort(unique(pptc.merge$Tumor_Sample_Barcode))
 source(paste0(script.folder, "load-maf-maftools.R"))
 
 ###load RNA expression matrix
-load("~/Box Sync/PPTC-genomics-collaboration/Pedcbio-upload/2019-02-14-PPTC_FPKM_matrix_withModelID-244.rda", verbose = T) 
+load(paste0(dataDir,"2019-02-14-PPTC_FPKM_matrix_withModelID-244.rda"), verbose = T) 
 
 ###create mutational signatures burden matrix
 source(paste0(script.folder, "create-mut-sigs-matrix.R"))
@@ -60,7 +70,7 @@ source(paste0(script.folder, "create-mut-sigs-matrix.R"))
 ###fix IC-2664
 
 ###focal CN matrix
-focal.cn.mat <- read.delim(paste0(pptc.folder, "Manuscript/scripts/focal-cn/2019-02-27-short_cn_matrix_fpkm1.txt"),as.is=TRUE,check.names=FALSE)
+focal.cn.mat <- read.delim(paste0(dataDir, "short_cn_matrix_fpkm1.txt"),as.is=TRUE,check.names=FALSE)
 
 #### Read fusion file ####
 source(paste0(script.folder, "reformat-fusion-as-matrix.R"))
@@ -73,7 +83,7 @@ for (broad.hist in broad.hists){
     ifelse(!dir.exists(file.path(mainDir, subDirHist)), dir.create(file.path(mainDir, subDirHist)), "Directory exists!")
     
     ##read in gene list
-    goi.list <- read.delim(paste0(pptc.folder, "Data/genelists/", broad.hist, "-goi-list.txt"), sep = "\t",
+    goi.list <- read.delim(paste0(dataDir, broad.hist, "-goi-list.txt"), sep = "\t",
                        header = F, as.is = T)
 
     ###use maftools for appropriate oncoprint matrix
@@ -96,7 +106,7 @@ for (broad.hist in broad.hists){
 }
 
 ##write session info
-sink(paste0(mainDir, subDir, Sys.Date(), "sessionInfo.txt"))
+sink(paste0(subDir,Sys.Date(), "sessionInfo.txt"))
 sessionInfo()
 sink()
 
