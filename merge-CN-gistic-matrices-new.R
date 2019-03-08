@@ -66,5 +66,5 @@ for(i in 1:ncol(gistic.cn))
 }#for(i in 1:ncol(gistic.cn))
 
 dim(New.gistic.cn)
-s
+
 
