@@ -3,7 +3,7 @@ library(deconstructSigs)
 
 ###add arm level dels/amps to annotation
 ifelse(broad.hist == "neuroblastoma", 
-arm <- read.delim(paste0(pptc.folder, "Manuscript/figures/oncoprints/neuroblastoma/2018-10-09-arm-lesions.txt"), 
+arm <- read.delim(paste0(dataDir, "arm-lesions.txt"), 
                   as.is = T, header = T, check.names = F), NA)
 
 clin.arm <- merge(clin.sub, arm)
