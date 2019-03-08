@@ -43,7 +43,7 @@ for (each in sub.hists){
                                                             c("#4F94CD", "#48D1CC", "#FFFACD", "#FF8C00", "#EE2C2C", "#171717"))), 
                                 annotation_height = 1, na_col = "whitesmoke")
  
-  pdf(paste(mainDir,subDirHist, "/", Sys.Date(), "-", each, "-oncoprint-goi-mut-cn-fusions.pdf", sep = ""),
+  pdf(paste0(subDirHist, "/", Sys.Date(), "-", each, "-oncoprint-goi-mut-cn-fusions.pdf", sep = ""),
       height = 17, width = 11)
   store.plot <- oncoPrint(mat.clean, get_type = function(x) strsplit(x, ";")[[1]],
                           ##keep rhabdos separated by histology
@@ -68,7 +68,7 @@ for (each in sub.hists){
   print(store.plot)
   
   write.table(sample_df[,c("Model", "Histology.Detailed", "Phase", "Sex")], 
-              paste0(paste(mainDir,subDirHist, "/", Sys.Date(), 
+              paste0(paste(subDirHist, "/", Sys.Date(), 
                            "-", each, "-oncoprint-sampleorder.txt", sep = "")), sep = "\t", col.names = T, 
               row.names = F, quote = F)
   
@@ -90,7 +90,7 @@ for (each in sub.hists){
           theme(axis.text.x = element_text(angle = 90, hjust = 1)))
   
   write.table(as.data.frame(log.mut.order), 
-              paste0(mainDir, subDirHist, "/", Sys.Date(), 
+              paste0(subDirHist, "/", Sys.Date(), 
                      "-", each, "-oncoprint-mutorder.txt"), sep = "\t", col.names = F, 
               row.names = T, quote = F)
   dev.off()
