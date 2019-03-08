@@ -35,8 +35,8 @@ if(!require(data.table)){
 }
 
 # Setting working directory
-setwd("~")
 mainDir <- "~/pptc-pdx-oncoprints/"
+setwd(mainDir)
 dataDir <- "~/pptc-pdx-oncoprints/data/"
 script.folder <- "~/create-pptc-pdx-oncoprints/"
 
