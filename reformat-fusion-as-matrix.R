@@ -67,7 +67,7 @@ for(i in 1:length(Gene_List.unique))
 }#for(i in 1:length(length(Gene_List.unique)))
 
 
-write.table(Fusion_Matrix, paste0(subDir, "/fusion-matrix.txt"), quote = F,col.names = T,row.names = T, sep = "\t")
+write.table(Fusion_Matrix, paste0(subDir, "fusion-matrix.txt"), quote = F,col.names = T,row.names = T, sep = "\t")
 
 
 
