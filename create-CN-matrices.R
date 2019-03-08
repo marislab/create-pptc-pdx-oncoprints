@@ -10,7 +10,7 @@
   final.cn.mat <- cn.matrix[,colnames(cn.matrix) %in% sub.clin$Model]
   
   ##Write new CN matrix
-  write.table(final.cn.mat, paste0(mainDir,subDirHist, "/", broad.hist, "-CN-matrix.txt"),
+  write.table(final.cn.mat, paste0(subDirHist, "/", broad.hist, "-CN-matrix.txt"),
               sep = "\t", col.names = T, row.names = T, quote = F)
   
   
