@@ -22,7 +22,7 @@ script.folder <- "~/create-pptc-pdx-oncoprints/"
 
 # create new directories in home
 dir.create(file.path(mainDir,"onco-out"))
-subDir <- "~/pptc-pdx-oncoprints/onco-out/"
+subDir <- paste0(mainDir,"onco-out/")
 
 ###create directories for saving files
 #mainDir <- "~/Box Sync/PPTC-genomics-collaboration/Manuscript/scripts/"
