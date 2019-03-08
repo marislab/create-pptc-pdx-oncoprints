@@ -114,7 +114,10 @@ store.plot <- oncoPrint(mat.clean, get_type = function(x) strsplit(x, ";")[[1]],
 print(store.plot)
 
 write.table(sample_df[,c("Model", "Histology.Detailed", "Phase", "Sex")], 
-            paste0(paste(pptc.folder,"Manuscript/figures/oncoprints/", each, "/", Sys.Date(), 
+            paste0(paste(pptc.folder,"Manuscript/figures/oncoprints/", 
+                         
+                         
+                         , "/", Sys.Date(), 
                          "-", hist, "-oncoprint-sampleorder.txt", sep = "")), sep = "\t", col.names = T, 
             row.names = F, quote = F)
 
