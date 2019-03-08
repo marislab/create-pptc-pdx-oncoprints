@@ -91,7 +91,7 @@ heat_anno = HeatmapAnnotation(df = df_anno,
 #                            gp = c(show_legend = F, annotation_height = 1,
 #                                  axis = TRUE, border = FALSE))
 
-pdf(paste(pptc.folder,"Manuscript/figures/oncoprints/", each, "/", Sys.Date(), "-", hist, "-pdx-oncoprint-goi-mut-cn.pdf", sep = ""),
+pdf(paste0(subDirHist,"/", each, "/", Sys.Date(), "-", hist, "-pdx-oncoprint-goi-mut-cn.pdf", sep = ""),
     height = 11, width = 9)
 store.plot <- oncoPrint(mat.clean, get_type = function(x) strsplit(x, ";")[[1]],
                         #column_order = sample_order,
