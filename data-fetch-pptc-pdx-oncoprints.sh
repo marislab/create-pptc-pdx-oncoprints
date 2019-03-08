@@ -3,10 +3,6 @@
 # INPUT files
 # Approved hugo symbols file = 2019-02-14-Hugo-Symbols-approved.txt
 # clinical file = 2019-02-09-pdx-clinical-final-for-paper.txt
-# source scripts = 
-# 1. mutation-color-function.R 
-# 2. demog-color-function.R 
-
 # MAF file = 2019-02-14-allpdx-clean-maf-240.rda
 # Expression matrix = 2019-02-14-PPTC_FPKM_matrix_withModelID-244.rda
 # focal CN matrix = 2019-02-27-short_cn_matrix_fpkm1.txt
