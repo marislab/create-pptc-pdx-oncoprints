@@ -3,7 +3,7 @@ require(circlize)
 ###subset samples with DNA assays
 clin.sub <- subset(clin, DNA.Part.of.PPTC == "yes")
 ###add arm level dels/amps to annotation
-arm <- read.delim(paste0(pptc.folder, "Manuscript/figures/oncoprints/neuroblastoma/2018-12-06-neuroblastoma-specific-lesions.txt"), 
+arm <- read.delim(paste0(dataDir, "neuroblastoma-specific-lesions.txt"), 
                   as.is = T, header = T, check.names = F)
 #merge clinical with arm lesions
 clin.arm <- merge(clin.sub, arm)
@@ -59,7 +59,7 @@ heat_anno = HeatmapAnnotation(df = df_anno,
                               annotation_height = 1,
                               na_col = "whitesmoke")
 
-pdf(paste(mainDir,subDirHist, "/", Sys.Date(), "-", broad.hist, "-oncoprint-goi-mut-cn-fusions.pdf", sep = ""),
+pdf(paste0(subDirHist, "/", Sys.Date(), "-", broad.hist, "-oncoprint-goi-mut-cn-fusions.pdf", sep = ""),
     height = 16, width = 11)
 store.plot <- oncoPrint(mat.clean, get_type = function(x) strsplit(x, ";")[[1]],
                         #column_order = sample_order,
@@ -82,7 +82,7 @@ store.plot <- oncoPrint(mat.clean, get_type = function(x) strsplit(x, ";")[[1]],
 print(store.plot)
 
 write.table(sample_df[,c("Model", "Histology.Detailed", "Phase", "Sex")], 
-            paste0(paste(mainDir,subDirHist, "/", Sys.Date(), 
+            paste0(paste0(subDirHist, "/", Sys.Date(), 
                          "-", broad.hist, "-oncoprint-sampleorder.txt", sep = "")), sep = "\t", col.names = T, 
             row.names = F, quote = F)
 
@@ -104,7 +104,7 @@ print(ggplot(log.mut.order.df, aes(x = order, y = log.mut.order)) +
         theme(axis.text.x = element_text(angle = 90, hjust = 1)))
 
 write.table(as.data.frame(log.mut.order), 
-            paste0(mainDir, subDirHist, "/", Sys.Date(), 
+            paste0(subDirHist, "/", Sys.Date(), 
                    "-", broad.hist, "-oncoprint-mutorder.txt"), sep = "\t", col.names = F, 
             row.names = T, quote = F)
 dev.off()
