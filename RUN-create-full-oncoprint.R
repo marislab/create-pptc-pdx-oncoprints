@@ -3,16 +3,36 @@
 ####Dependencies
 #devtools::install_github(repo = "jharenza/maftools")
 #install.extras('NMF')
-require(maftools)
-require(NMF)
-require(rmatio)
-require(BSgenome.Hsapiens.UCSC.hg19)
-require(dplyr)
-require(tidyr)
-library(ggplot2)
-library(ComplexHeatmap)
-library(deconstructSigs)
-library(data.table)
+if(!require(maftools)){
+  install.packages("maftools", repos='http://cran.us.r-project.org')
+}
+if(!require(NMF)){
+  install.packages("NMF", repos='http://cran.us.r-project.org')
+}
+if(!require(rmatio)){
+  install.packages("rmatio", repos='http://cran.us.r-project.org')
+}
+if(!require(BSgenome.Hsapiens.UCSC.hg19)){
+  install.packages("BSgenome.Hsapiens.UCSC.hg19", repos='http://cran.us.r-project.org')
+}
+if(!require(dplyr)){
+  install.packages("dplyr", repos='http://cran.us.r-project.org')
+}
+if(!require(tidyr)){
+  install.packages("tidyr", repos='http://cran.us.r-project.org')
+}
+if(!require(ggplot2)){
+  install.packages("ggplot2", repos='http://cran.us.r-project.org')
+}
+if(!require(ComplexHeatmap)){
+  install.packages("ComplexHeatmap", repos='http://cran.us.r-project.org')
+}
+if(!require(deconstructSigs)){
+  install.packages("deconstructSigs", repos='http://cran.us.r-project.org')
+}
+if(!require(data.table)){
+  install.packages("data.table", repos='http://cran.us.r-project.org')
+}
 
 # Setting working directory
 setwd("~")
