@@ -3,8 +3,7 @@ require(circlize)
 ###subset samples with DNA assays
 clin.sub <- subset(clin, DNA.Part.of.PPTC == "yes")
 ###add arm level dels/amps to annotation
-arm <- read.delim(paste0(pptc.folder, "Manuscript/figures/oncoprints/", broad.hist, 
-  "/2018-12-19-", broad.hist, "-specific-lesions.txt"), as.is = T, header = T, check.names = F)
+arm <- read.delim(paste0(dataDir,"renal-specific-lesions.txt"), as.is = T, header = T, check.names = F)
 #merge clinical with arm lesions
 clin.arm <- merge(clin.sub, arm)
 
