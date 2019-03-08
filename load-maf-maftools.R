@@ -24,5 +24,5 @@ colnames(load)[colnames(load)== "Tumor_Sample_Barcode"] <- "Model"
 load.hist <- merge(clin.hist, load)
 
 ##write in sort order most to least Mut per MB
-write.table(load.hist[order(-load.hist$MutperMB),], paste0(mainDir, subDir, Sys.Date(), "-mutations-per-model.txt"), 
+write.table(load.hist[order(-load.hist$MutperMB),], paste0(subDir, Sys.Date(), "-mutations-per-model.txt"), 
             sep = "\t", col.names = T, row.names = F, quote = F)
