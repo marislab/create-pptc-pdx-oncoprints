@@ -36,9 +36,9 @@ if(!require(data.table)){
 
 # Setting working directory
 mainDir <- "~/pptc-pdx-oncoprints/"
+script.folder <- getwd()
 setwd(mainDir)
 dataDir <- "~/pptc-pdx-oncoprints/data/"
-script.folder <- "~/create-pptc-pdx-oncoprints/"
 
 # create new directories in mainDir
 dir.create(file.path(mainDir,"onco-out"))
