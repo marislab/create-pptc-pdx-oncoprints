@@ -44,16 +44,9 @@ dataDir <- "~/pptc-pdx-oncoprints/data/"
 dir.create(file.path(mainDir,"onco-out"))
 subDir <- paste0(mainDir,"onco-out/")
 
-###create directories for saving files
-#mainDir <- "~/Box Sync/PPTC-genomics-collaboration/Manuscript/scripts/"
-#subDir <- "onco-out/"
-#subDir <- "test/"
 
 ifelse(!dir.exists(file.path(mainDir, subDir)), dir.create(file.path(mainDir, subDir)), "Directory exists!")
 
-#set directories for saving files, specify histology of interest
-#pptc.folder <- "~/Box Sync/PPTC-genomics-collaboration/"
-#script.folder <- "~/Box Sync/PPTC-genomics-collaboration/Manuscript/scripts/oncoprint-r-scripts/"
 
 #load file for harmonization of gene IDs
 gene.ids <- read.delim(paste0(dataDir,"2019-02-14-Hugo-Symbols-approved.txt"),
