@@ -47,8 +47,8 @@ clin.pptc <- subset(clin, Model.Part.of.PPTC == "yes")
 broad.hists <- as.list(unique(clin.pptc$Histology.Oncoprints)) ## use for generation of mutation and CN matrices
 
 ###load color functions
-source(paste0(pptc.folder, "Manuscript/figures/oncoprints/mutation-color-function.R"))
-source(paste0(pptc.folder, "Manuscript/figures/oncoprints/demog-color-function.R"))
+source(paste0(script.folder, "mutation-color-function.R"))
+source(paste0(script.folder, "demog-color-function.R"))
 
 ###load MAF file into WD and into maftools
 load(paste0(dataDir,"2019-02-14-allpdx-clean-maf-240.rda"), verbose = T)
