@@ -4,7 +4,7 @@
 #devtools::install_github(repo = "jharenza/maftools")
 #install.extras('NMF')
 if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager", lib = "~/pptc-pdx-oncoprints/packages/")
+    install.packages("BiocManager", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 BiocManager::install("maftools", version = "3.8")
 
 library(maftools, lib.loc = "~/pptc-pdx-oncoprints/packages/")
