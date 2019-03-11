@@ -3,9 +3,6 @@
 ####Dependencies
 #devtools::install_github(repo = "jharenza/maftools")
 #install.extras('NMF')
-if (!require("devtools")){
-  install.packages("devtools", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
-}
 if (!require("NMF")){
   install.packages("NMF", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
 }
@@ -24,7 +21,11 @@ if (!require("ggplot2")){
 if (!require("data.table")){
   install.packages("data.table", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
 }
-
+if (!require("devtools")){
+  install.packages("devtools", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+}
+# install BSgenome
+install.packages("http://www.bioconductor.org/packages//2.10/bioc/src/contrib/BSgenome_1.24.0.tar.gz", repo=NULL, type="source", lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
 # install BSgenome.Hsapiens.UCSC.hg19
 install.packages("https://bioconductor.org/packages/release/data/annotation/src/contrib/BSgenome.Hsapiens.UCSC.hg19_1.4.0.tar.gz", repo=NULL, type="source", lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
 # install ComplexHeatmap
