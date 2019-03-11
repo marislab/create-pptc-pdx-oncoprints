@@ -35,8 +35,9 @@ if (!require("data.table")){
 }
 
 library("devtools", lib.loc = "~/pptc-pdx-oncoprints/packages/")
-devtools::install_github(repo = "jharenza/maftools")
-library("maftools")
+#devtools::install_github(repo = "jharenza/maftools")
+with_libpaths(new = "~/pptc-pdx-oncoprints/packages/", install_github(repo = "jharenza/maftools"))
+library("maftools", lib.loc = "~/pptc-pdx-oncoprints/packages/")
 
 library(maftools, lib.loc = "~/pptc-pdx-oncoprints/packages/")
 library(NMF, lib.loc = "~/pptc-pdx-oncoprints/packages/")
