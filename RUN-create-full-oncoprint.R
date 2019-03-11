@@ -3,14 +3,7 @@
 ####Dependencies
 #devtools::install_github(repo = "jharenza/maftools")
 #install.extras('NMF')
-if (!require("maftools")){
-  install.packages("maftools", repos='http://cran.us.r-project.org')
-}
-library(maftools)
-if (!require("NMF")){
-  install.packages("NMF", repos='http://cran.us.r-project.org')
-}
-library(NMF)
+
 if (!require("rmatio")){
   install.packages("rmatio", repos='http://cran.us.r-project.org')
 }
