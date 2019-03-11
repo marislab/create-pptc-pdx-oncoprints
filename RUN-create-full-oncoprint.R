@@ -3,43 +3,43 @@
 ####Dependencies
 #devtools::install_github(repo = "jharenza/maftools")
 #install.extras('NMF')
-if(!require(maftools)){
+if(!require("maftools")){
   install.packages("maftools", repos='http://cran.us.r-project.org')
 }
 library(maftools)
-if(!require(NMF)){
+if(!require("NMF")){
   install.packages("NMF", repos='http://cran.us.r-project.org')
 }
 library(NMF)
-if(!require(rmatio)){
+if(!require("rmatio")){
   install.packages("rmatio", repos='http://cran.us.r-project.org')
 }
 library(rmatio)
-if(!require(BSgenome.Hsapiens.UCSC.hg19)){
+if(!require("BSgenome.Hsapiens.UCSC.hg19")){
   install.packages("BSgenome.Hsapiens.UCSC.hg19", repos='http://cran.us.r-project.org')
 }
 library(BSgenome.Hsapiens.UCSC.hg19)
-if(!require(dplyr)){
+if(!require("dplyr")){
   install.packages("dplyr", repos='http://cran.us.r-project.org')
 }
 library(dplyr)
-if(!require(tidyr)){
+if(!require("tidyr")){
   install.packages("tidyr", repos='http://cran.us.r-project.org')
 }
 library(tidyr)
-if(!require(ggplot2)){
+if(!require("ggplot2")){
   install.packages("ggplot2", repos='http://cran.us.r-project.org')
 }
 library(ggplot2)
-if(!require(ComplexHeatmap)){
+if(!require("ComplexHeatmap")){
   install.packages("ComplexHeatmap", repos='http://cran.us.r-project.org')
 }
 library(ComplexHeatmap)
-if(!require(deconstructSigs)){
+if(!require("deconstructSigs")){
   install.packages("deconstructSigs", repos='http://cran.us.r-project.org')
 }
 library(deconstructSigs)
-if(!require(data.table)){
+if(!require("data.table")){
   install.packages("data.table", repos='http://cran.us.r-project.org')
 }
 library(data.table)
