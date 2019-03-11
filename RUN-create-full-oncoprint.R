@@ -1,46 +1,48 @@
 ###create cohesive oncoprints 
 
+.libPaths("~/pptc-pdx-oncoprints/packages/")
+
 ####Dependencies
 #devtools::install_github(repo = "jharenza/maftools")
 #install.extras('NMF')
 if (!require("maftools")){
-  install.packages("data.table", repos='http://cran.us.r-project.org')
+  install.packages("data.table", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
 library(maftools)
 if (!require("NMF")){
-  install.packages("NMF", repos='http://cran.us.r-project.org')
+  install.packages("NMF", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
 library(NMF)
 if (!require("rmatio")){
-  install.packages("rmatio", repos='http://cran.us.r-project.org')
+  install.packages("rmatio", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
 library(rmatio)
 if (!require("BSgenome.Hsapiens.UCSC.hg19")){
-  install.packages("BSgenome.Hsapiens.UCSC.hg19", repos='http://cran.us.r-project.org')
+  install.packages("BSgenome.Hsapiens.UCSC.hg19", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
 library(BSgenome.Hsapiens.UCSC.hg19)
 if (!require("dplyr")){
-  install.packages("dplyr", repos='http://cran.us.r-project.org')
+  install.packages("dplyr", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
 library(dplyr)
 if (!require("tidyr")){
-  install.packages("tidyr", repos='http://cran.us.r-project.org')
+  install.packages("tidyr", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
 library(tidyr)
 if (!require("ggplot2")){
-  install.packages("ggplot2", repos='http://cran.us.r-project.org')
+  install.packages("ggplot2", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
 library(ggplot2)
 if (!require("ComplexHeatmap")){
-  install.packages("ComplexHeatmap", repos='http://cran.us.r-project.org')
+  install.packages("ComplexHeatmap", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
 library(ComplexHeatmap)
 if (!require("deconstructSigs")){
-  install.packages("deconstructSigs", repos='http://cran.us.r-project.org')
+  install.packages("deconstructSigs", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
 library(deconstructSigs)
 if (!require("data.table")){
-  install.packages("data.table", repos='http://cran.us.r-project.org')
+  install.packages("data.table", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
 library(data.table)
 
