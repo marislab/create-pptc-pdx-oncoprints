@@ -12,9 +12,6 @@ if (!require("NMF")){
 if (!require("rmatio")){
   install.packages("rmatio", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
 }
-if (!require("BSgenome.Hsapiens.UCSC.hg19")){
-  install.packages("BSgenome.Hsapiens.UCSC.hg19", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
-}
 if (!require("dplyr")){
   install.packages("dplyr", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
 }
@@ -24,15 +21,14 @@ if (!require("tidyr")){
 if (!require("ggplot2")){
   install.packages("ggplot2", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
 }
-if (!require("ComplexHeatmap")){
-  install.packages("ComplexHeatmap", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
-}
-if (!require("deconstructSigs")){
-  install.packages("deconstructSigs", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
-}
 if (!require("data.table")){
   install.packages("data.table", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
 }
+if (!require("BiocManager")){
+  install.packages("BiocManager", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+}
+
+BiocManager::install(c("BSgenome.Hsapiens.UCSC.hg19","ComplexHeatmap", "deconstructSigs"))
 
 library("devtools", lib.loc = "~/pptc-pdx-oncoprints/packages/")
 #devtools::install_github(repo = "jharenza/maftools")
