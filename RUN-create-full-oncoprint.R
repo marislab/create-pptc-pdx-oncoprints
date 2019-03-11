@@ -6,43 +6,43 @@
 if (!require("maftools")){
   install.packages("data.table", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
-library(maftools)
+library(maftools, lib.loc = "~/pptc-pdx-oncoprints/packages/")
 if (!require("NMF")){
   install.packages("NMF", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
-library(NMF)
+library(NMF, lib.loc = "~/pptc-pdx-oncoprints/packages/")
 if (!require("rmatio")){
   install.packages("rmatio", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
-library(rmatio)
+library(rmatio, lib.loc = "~/pptc-pdx-oncoprints/packages/")
 if (!require("BSgenome.Hsapiens.UCSC.hg19")){
   install.packages("BSgenome.Hsapiens.UCSC.hg19", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
-library(BSgenome.Hsapiens.UCSC.hg19)
+library(BSgenome.Hsapiens.UCSC.hg19, lib.loc = "~/pptc-pdx-oncoprints/packages/")
 if (!require("dplyr")){
   install.packages("dplyr", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
-library(dplyr)
+library(dplyr, lib.loc = "~/pptc-pdx-oncoprints/packages/")
 if (!require("tidyr")){
   install.packages("tidyr", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
-library(tidyr)
+library(tidyr, lib.loc = "~/pptc-pdx-oncoprints/packages/")
 if (!require("ggplot2")){
   install.packages("ggplot2", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
-library(ggplot2)
+library(ggplot2, lib.loc = "~/pptc-pdx-oncoprints/packages/")
 if (!require("ComplexHeatmap")){
   install.packages("ComplexHeatmap", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
-library(ComplexHeatmap)
+library(ComplexHeatmap, lib.loc = "~/pptc-pdx-oncoprints/packages/")
 if (!require("deconstructSigs")){
   install.packages("deconstructSigs", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
-library(deconstructSigs)
+library(deconstructSigs, lib.loc = "~/pptc-pdx-oncoprints/packages/")
 if (!require("data.table")){
   install.packages("data.table", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
 }
-library(data.table)
+library(data.table, lib.loc = "~/pptc-pdx-oncoprints/packages/")
 
 # Setting working directory
 mainDir <- "~/pptc-pdx-oncoprints/"
