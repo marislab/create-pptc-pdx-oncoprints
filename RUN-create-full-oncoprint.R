@@ -4,47 +4,48 @@
 #devtools::install_github(repo = "jharenza/maftools")
 #install.extras('NMF')
 if (!require("devtools")){
-  install.packages("devtools", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
+  install.packages("devtools", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
 }
+if (!require("NMF")){
+  install.packages("NMF", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+}
+if (!require("rmatio")){
+  install.packages("rmatio", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+}
+if (!require("BSgenome.Hsapiens.UCSC.hg19")){
+  install.packages("BSgenome.Hsapiens.UCSC.hg19", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+}
+if (!require("dplyr")){
+  install.packages("dplyr", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+}
+if (!require("tidyr")){
+  install.packages("tidyr", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+}
+if (!require("ggplot2")){
+  install.packages("ggplot2", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+}
+if (!require("ComplexHeatmap")){
+  install.packages("ComplexHeatmap", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+}
+if (!require("deconstructSigs")){
+  install.packages("deconstructSigs", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+}
+if (!require("data.table")){
+  install.packages("data.table", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+}
+
 library("devtools", lib.loc = "~/pptc-pdx-oncoprints/packages/")
 install_github(repo = "PoisonAlien/maftools")
 
 library(maftools, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-if (!require("NMF")){
-  install.packages("NMF", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
-}
 library(NMF, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-if (!require("rmatio")){
-  install.packages("rmatio", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
-}
 library(rmatio, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-if (!require("BSgenome.Hsapiens.UCSC.hg19")){
-  install.packages("BSgenome.Hsapiens.UCSC.hg19", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
-}
 library(BSgenome.Hsapiens.UCSC.hg19, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-if (!require("dplyr")){
-  install.packages("dplyr", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
-}
 library(dplyr, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-if (!require("tidyr")){
-  install.packages("tidyr", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
-}
 library(tidyr, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-if (!require("ggplot2")){
-  install.packages("ggplot2", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
-}
 library(ggplot2, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-if (!require("ComplexHeatmap")){
-  install.packages("ComplexHeatmap", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
-}
 library(ComplexHeatmap, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-if (!require("deconstructSigs")){
-  install.packages("deconstructSigs", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
-}
 library(deconstructSigs, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-if (!require("data.table")){
-  install.packages("data.table", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
-}
 library(data.table, lib.loc = "~/pptc-pdx-oncoprints/packages/")
 
 # Setting working directory
