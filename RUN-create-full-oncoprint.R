@@ -1,7 +1,5 @@
 ###create cohesive oncoprints 
-
 .libPaths("~/pptc-pdx-oncoprints/packages/")
-
 ####Dependencies
 #devtools::install_github(repo = "jharenza/maftools")
 #install.extras('NMF')
