@@ -35,7 +35,8 @@ if (!require("data.table")){
 }
 
 library("devtools", lib.loc = "~/pptc-pdx-oncoprints/packages/")
-install_github(repo = "PoisonAlien/maftools")
+devtools::install_github(repo = "jharenza/maftools")
+library("maftools")
 
 library(maftools, lib.loc = "~/pptc-pdx-oncoprints/packages/")
 library(NMF, lib.loc = "~/pptc-pdx-oncoprints/packages/")
