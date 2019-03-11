@@ -24,11 +24,14 @@ if (!require("ggplot2")){
 if (!require("data.table")){
   install.packages("data.table", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
 }
-if (!require("BiocManager")){
-  install.packages("BiocManager", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
-}
 
-BiocManager::install(c("BSgenome.Hsapiens.UCSC.hg19","ComplexHeatmap", "deconstructSigs"))
+# install BSgenome.Hsapiens.UCSC.hg19
+install.packages("https://bioconductor.org/packages/release/data/annotation/src/contrib/BSgenome.Hsapiens.UCSC.hg19_1.4.0.tar.gz", repo=NULL, type="source", lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+# install ComplexHeatmap
+install.packages("https://bioconductor.org/packages/release/bioc/src/contrib/ComplexHeatmap_1.20.0.tar.gz", repo=NULL, type="source", lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+# install deconstructSigs
+install.packages("https://cran.r-project.org/src/contrib/deconstructSigs_1.8.0.tar.gz", repo=NULL, type="source", lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+
 
 library("devtools", lib.loc = "~/pptc-pdx-oncoprints/packages/")
 #devtools::install_github(repo = "jharenza/maftools")
