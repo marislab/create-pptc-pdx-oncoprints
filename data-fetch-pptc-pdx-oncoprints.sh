@@ -8,7 +8,7 @@
 # 2. demog-color-function.R 
 
 # MAF file = 2019-02-14-allpdx-clean-maf-240.rda
-# Expression matrix = 2019-02-14-PPTC_FPKM_matrix_withModelID-244.rda
+# Expression matrix = 2019-02-14-PPTC_FPKM_matrix_withModelID-244.RDS
 # focal CN matrix = 2019-02-27-short_cn_matrix_fpkm1.txt
 # genelists
 # neuroblastoma specific leisons = 2018-12-06-neuroblastoma-specific-lesions.txt
