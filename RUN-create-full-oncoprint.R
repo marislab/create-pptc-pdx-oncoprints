@@ -3,9 +3,11 @@
 ####Dependencies
 #devtools::install_github(repo = "jharenza/maftools")
 #install.extras('NMF')
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
-BiocManager::install("maftools", version = "3.8")
+if (!require("devtools")){
+  install.packages("devtools", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/")
+}
+library("devtools", lib.loc = "~/pptc-pdx-oncoprints/packages/")
+install_github(repo = "PoisonAlien/maftools")
 
 library(maftools, lib.loc = "~/pptc-pdx-oncoprints/packages/")
 if (!require("NMF")){
