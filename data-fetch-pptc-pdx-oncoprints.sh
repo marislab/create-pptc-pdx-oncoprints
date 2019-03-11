@@ -15,6 +15,7 @@
 
 cd ~
 mkdir -p pptc-pdx-oncoprints/data/ pptc-pdx-oncoprints/packages/
+chmod 755 pptc-pdx-oncoprints/data/ pptc-pdx-oncoprints/packages/
 cd ~/pptc-pdx-oncoprints/data/
 
 # 1. Approved Hugo Symbols file
