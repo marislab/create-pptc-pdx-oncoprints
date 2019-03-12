@@ -18,8 +18,8 @@
 # renal specific leisons = renal-specific-lesions.txt
 
 cd ~
-mkdir -p pptc-pdx-oncoprints/data/ pptc-pdx-oncoprints/packages/
-chmod 755 pptc-pdx-oncoprints/data/ pptc-pdx-oncoprints/packages/
+mkdir -p pptc-pdx-oncoprints/data/
+chmod 755 pptc-pdx-oncoprints/data/
 cd ~/pptc-pdx-oncoprints/data/
 
 # 1. Approved Hugo Symbols file
