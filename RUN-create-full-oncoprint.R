@@ -1,52 +1,60 @@
 ###create cohesive oncoprints
-.libPaths("~/pptc-pdx-oncoprints/packages/")
+
 ####Dependencies
 #devtools::install_github(repo = "jharenza/maftools")
 #install.extras('NMF')
 if (!require("devtools")){
-  install.packages("devtools", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+  install.packages("devtools", repos='http://cran.us.r-project.org', dependencies = TRUE)
 }
 if (!require("NMF")){
-  install.packages("NMF", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+  install.packages("NMF", repos='http://cran.us.r-project.org', dependencies = TRUE)
 }
 if (!require("rmatio")){
-  install.packages("rmatio", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+  install.packages("rmatio", repos='http://cran.us.r-project.org', dependencies = TRUE)
 }
 if (!require("dplyr")){
-  install.packages("dplyr", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+  install.packages("dplyr", repos='http://cran.us.r-project.org', dependencies = TRUE)
 }
 if (!require("tidyr")){
-  install.packages("tidyr", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+  install.packages("tidyr", repos='http://cran.us.r-project.org', dependencies = TRUE)
 }
 if (!require("ggplot2")){
-  install.packages("ggplot2", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+  install.packages("ggplot2", repos='http://cran.us.r-project.org', dependencies = TRUE)
 }
 if (!require("data.table")){
-  install.packages("data.table", repos='http://cran.us.r-project.org', lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+  install.packages("data.table", repos='http://cran.us.r-project.org', dependencies = TRUE)
+}
+if (!require("BiocManager")){
+  install.packages("BiocManager", repos='http://cran.us.r-project.org', dependencies = TRUE)
 }
 if (!require("BSgenome.Hsapiens.UCSC.hg19")){
-  install.packages("https://bioconductor.org/packages/release/data/annotation/src/contrib/BSgenome.Hsapiens.UCSC.hg19_1.4.0.tar.gz", repo=NULL, type="source", lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+  install.packages("https://bioconductor.org/packages/release/data/annotation/src/contrib/BSgenome.Hsapiens.UCSC.hg19_1.4.0.tar.gz", repo=NULL, type="source", dependencies = TRUE)
 }
 if (!require("ComplexHeatmap")){
-  install.packages("https://bioconductor.org/packages/release/bioc/src/contrib/ComplexHeatmap_1.20.0.tar.gz", repo=NULL, type="source", lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+  install.packages("https://bioconductor.org/packages/release/bioc/src/contrib/ComplexHeatmap_1.20.0.tar.gz", repo=NULL, type="source",dependencies = TRUE)
 }
 if (!require("deconstructSigs")){
-install.packages("https://cran.r-project.org/src/contrib/deconstructSigs_1.8.0.tar.gz", repo=NULL, type="source", lib = "~/pptc-pdx-oncoprints/packages/", dependencies = TRUE)
+  install.packages("https://cran.r-project.org/src/contrib/deconstructSigs_1.8.0.tar.gz", repo=NULL, type="source", dependencies = TRUE)
+}
+if (!require("circlize")){
+  install.packages("circlize", repos='http://cran.us.r-project.org', dependencies = TRUE)
 }
 
-library("devtools", lib.loc = "~/pptc-pdx-oncoprints/packages/")
-#devtools::install_github(repo = "jharenza/maftools")
-with_libpaths(new = "~/pptc-pdx-oncoprints/packages/", install_github(repo = "jharenza/maftools"))
-library(maftools, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-library(NMF, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-library(rmatio, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-library(BSgenome.Hsapiens.UCSC.hg19, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-library(dplyr, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-library(tidyr, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-library(ggplot2, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-library(ComplexHeatmap, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-library(deconstructSigs, lib.loc = "~/pptc-pdx-oncoprints/packages/")
-library(data.table, lib.loc = "~/pptc-pdx-oncoprints/packages/")
+
+library(devtools)
+devtools::install_github(repo = "jharenza/maftools")
+library(maftools)
+library(NMF)
+library(rmatio)
+library(BSgenome.Hsapiens.UCSC.hg19)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(ComplexHeatmap)
+library(deconstructSigs)
+library(data.table)
+library(circlize)
+
 
 # Setting working directory
 mainDir <- "~/pptc-pdx-oncoprints/"
@@ -86,7 +94,7 @@ sort(unique(pptc.merge$Tumor_Sample_Barcode))
 source(paste0(script.folder, "load-maf-maftools.R"))
 
 ###load RNA expression matrix
-load(paste0(dataDir,"2019-02-14-PPTC_FPKM_matrix_withModelID-244.rda"), verbose = T) 
+rna.matrix <- readRDS(paste0(dataDir,"2019-02-14-PPTC_FPKM_matrix_withModelID-244.RDS")) 
 
 ###create mutational signatures burden matrix
 source(paste0(script.folder, "create-mut-sigs-matrix.R"))
@@ -107,6 +115,7 @@ for (broad.hist in broad.hists){
     print(paste0("creating ", broad.hist, " matrices and oncoprints"))
     ##create directory for results
     subDirHist <- paste0(subDir, broad.hist)
+    dir.create(file.path(subDir, broad.hist))
     ifelse(!dir.exists(file.path(mainDir, subDirHist)), dir.create(file.path(mainDir, subDirHist)), "Directory exists!")
     
     ##read in gene list
@@ -136,5 +145,3 @@ for (broad.hist in broad.hists){
 sink(paste0(subDir,Sys.Date(), "sessionInfo.txt"))
 sessionInfo()
 sink()
-
-
