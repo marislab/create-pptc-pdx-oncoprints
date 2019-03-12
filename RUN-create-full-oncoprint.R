@@ -24,9 +24,6 @@ if (!require("ggplot2")){
 if (!require("data.table")){
   install.packages("data.table", repos='http://cran.us.r-project.org', dependencies = TRUE)
 }
-if (!require("BiocManager")){
-  install.packages("BiocManager", repos='http://cran.us.r-project.org', dependencies = TRUE)
-}
 if (!require("BSgenome.Hsapiens.UCSC.hg19")){
   install.packages("https://bioconductor.org/packages/release/data/annotation/src/contrib/BSgenome.Hsapiens.UCSC.hg19_1.4.0.tar.gz", repo=NULL, type="source", dependencies = TRUE)
 }
@@ -40,9 +37,9 @@ if (!require("circlize")){
   install.packages("circlize", repos='http://cran.us.r-project.org', dependencies = TRUE)
 }
 
+devtools::install_github(repo = "jharenza/maftools")
 
 library(devtools)
-devtools::install_github(repo = "jharenza/maftools")
 library(maftools)
 library(NMF)
 library(rmatio)
