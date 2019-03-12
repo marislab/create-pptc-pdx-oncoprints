@@ -55,7 +55,7 @@ library(circlize)
 
 # Setting working directory
 mainDir <- "~/pptc-pdx-oncoprints/"
-script.folder <- getwd()
+script.folder <- "~/create-pptc-pdx-oncoprints/"
 setwd(mainDir)
 dataDir <- "~/pptc-pdx-oncoprints/data/"
 
