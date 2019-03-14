@@ -8,7 +8,7 @@ genelist <- unique(genelist)
 hist.clin <- subset(clin, Histology.Oncoprints == broad.hist)
 
 ##subset maf for histology-specific samples only
-sub.maf = maftools::subsetMaf(maf = maf, tsb = hist.clin$Tumor_Sample_Barcode, mafObj = TRUE) #all genes for hist-specific
+sub.maf = maftools::subsetMaf(maf = maf, tsb = hist.clin$Model, mafObj = TRUE)
 sub.maf.goi = maftools::subsetMaf(maf = sub.maf, genes = genelist, mafObj = TRUE) #only goi
 
 setwd(paste0(subDirHist))
