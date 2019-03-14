@@ -110,8 +110,8 @@ for (broad.hist in broad.hists){
     print(paste0("creating ", broad.hist, " matrices and oncoprints"))
     ##create directory for results
     subDirHist <- paste0(subDir, broad.hist)
-    dir.create(file.path(subDir, broad.hist))
-    ifelse(!dir.exists(file.path(mainDir, subDirHist)), dir.create(file.path(mainDir, subDirHist)), "Directory exists!")
+    #dir.create(file.path(subDir, broad.hist))
+    ifelse(!dir.exists(file.path(subDir, broad.hist)), dir.create(file.path(subDir, broad.hist)), "Directory exists!")
     
     ##read in gene list
     goi.list <- read.delim(paste0(dataDir, broad.hist, "-goi-list.txt"), sep = "\t",
