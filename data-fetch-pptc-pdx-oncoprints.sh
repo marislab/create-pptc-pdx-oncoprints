@@ -32,7 +32,7 @@ wget --output-document='pptc-pdx-clinical-web.txt' https://ndownloader.figshare.
 wget --output-document='2019-02-14-allpdx-clean-maf-240.rda' https://ndownloader.figshare.com/files/14414198
 
 # 4. Download Expression matrix
-wget --output-document='2019-02-14-PPTC_FPKM_matrix_withModelID-245.RDS' https://ndownloader.figshare.com/articles/7751825/versions/2
+wget --output-document='2019-02-14-PPTC_FPKM_matrix_withModelID-244.rda'https://ndownloader.figshare.com/files/14452985
 
 # 4. focal CN matrix
 wget --output-document='short_cn_matrix_fpkm1.txt' https://ndownloader.figshare.com/files/14545979
