@@ -40,6 +40,9 @@ Pipeline
          # Download github repository in your home directory (~/)
          git clone https://github.com/marislab/create-pptc-pdx-oncoprints.git
          
-         # Run the following script
-         RUN-create-full-oncoprint.R
+         # Run script to fetch data
+         ./data-fetch-pptc-pdx-oncoprints.sh
+         
+         # Run script to generate oncoprints
+         Rscript RUN-create-full-oncoprint.R
 
