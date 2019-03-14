@@ -33,10 +33,11 @@ Software Requirements
 
 Pipeline
 ========
-Download github repository in your home directory (~/)
+1. Download github repository in your home directory (~/)
 .. code-block:: bash
-   git clone https://github.com/marislab/create-pptc-pdx-oncoprints.git`
+         git clone https://github.com/marislab/create-pptc-pdx-oncoprints.git
 
-run the following script
-   RUN-create-full-oncoprint.R
+2. Run the following script
+.. code-block:: bash
+         RUN-create-full-oncoprint.R
 
