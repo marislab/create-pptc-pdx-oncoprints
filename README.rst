@@ -35,6 +35,10 @@ Pipeline
 ========
 
 ```
-#Set up directories relevant files in the following script and run
+# Download github repository in your home directory (~/)
+git clone https://github.com/marislab/create-pptc-pdx-oncoprints.git
+
+# run the following script
 RUN-create-full-oncoprint.R
+
 ```
