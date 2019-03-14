@@ -35,7 +35,7 @@ Pipeline
 ========
 
 .. code-block:: bash
-
+         # How to run:
          # Download github repository in your home directory (~/)
          git clone https://github.com/marislab/create-pptc-pdx-oncoprints.git
          
