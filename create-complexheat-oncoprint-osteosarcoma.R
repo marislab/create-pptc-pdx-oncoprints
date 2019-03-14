@@ -2,7 +2,7 @@ require(circlize)
 clin.sub <- subset(clin, DNA.Part.of.PPTC == "yes")
 
 ###add arm level dels/amps to annotation
-class <- read.delim(paste0(pptc.folder, "Data/classifiers/output/classifier_scores_with_clinical_and_alterations.tsv"), 
+class <- read.delim(paste0(dataDir, "classifier_scores_with_clinical_and_alterations.tsv"), 
                   as.is = T, header = T, check.names = F)
 ##deduplicate rows
 class.dedup <- unique(class)
@@ -68,7 +68,7 @@ bar_anno = HeatmapAnnotation(mutations = anno_barplot(log.mut.order),
                                gp = c(show_legend = F, annotation_height = 1,
                                       axis = TRUE, border = FALSE))
   
-pdf(paste(mainDir,subDirHist, "/", Sys.Date(), "-", broad.hist, "-oncoprint-goi-mut-cn-fusions.pdf", sep = ""),
+pdf(paste0(subDirHist, "/", Sys.Date(), "-", broad.hist, "-oncoprint-goi-mut-cn-fusions.pdf", sep = ""),
     height = 16, width = 11)
 store.plot <-  oncoPrint(mat.clean, get_type = function(x) strsplit(x, ";")[[1]],
                   #column_order = sample_order,
@@ -91,7 +91,7 @@ store.plot <-  oncoPrint(mat.clean, get_type = function(x) strsplit(x, ";")[[1]]
   print(store.plot)
   
   write.table(sample_df[,c("Model", "Histology.Detailed", "Phase", "Sex")], 
-              paste0(paste(mainDir, subDirHist,"/", Sys.Date(), 
+              paste0(paste(subDirHist,"/", Sys.Date(), 
                            "-", broad.hist, "-oncoprint-sampleorder.txt", sep = "")), sep = "\t", col.names = T, 
               row.names = F, quote = F)
   
@@ -116,7 +116,7 @@ store.plot <-  oncoPrint(mat.clean, get_type = function(x) strsplit(x, ";")[[1]]
   
   
   write.table(as.data.frame(log.mut.order), 
-              paste0(mainDir, subDirHist, "/", Sys.Date(), 
+              paste0(subDirHist, "/", Sys.Date(), 
                      "-", broad.hist, "-oncoprint-mutorder.txt"), sep = "\t", col.names = F, 
               row.names = T, quote = F)
   dev.off()

@@ -75,7 +75,7 @@ for(i in 1:ncol(New.onco.matrix))
 
 ##shift ID columns over and write table
 write.table(as.data.frame(New.New.onco.matrix), 
-            paste0(mainDir, subDirHist, "/", broad.hist, "-mut-cn-fus-matrix.txt"), 
+            paste0(subDirHist, "/", broad.hist, "-mut-cn-fus-matrix.txt"), 
             quote = F,col.names = T,row.names = T, sep = "\t")
 New.New.onco.matrix[1:10,1:4]
 

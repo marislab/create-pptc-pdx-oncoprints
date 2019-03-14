@@ -1,5 +1,5 @@
 #### Read collapsed Fusion File ####
-Fusion_File = read.delim("~/Box Sync/PPTC-genomics-collaboration/Manuscript/tables/fusion-results/DriverFusions_Collapsed.txt",
+Fusion_File = read.delim(paste0(dataDir,"DriverFusions_Collapsed.txt"),
                          sep = "\t", header = T, as.is = T)
 #### Get unique list of models from the 3rd column (Models) ####
 Model_List = strsplit(as.character(Fusion_File$Models),split = ", ")
@@ -67,7 +67,7 @@ for(i in 1:length(Gene_List.unique))
 }#for(i in 1:length(length(Gene_List.unique)))
 
 
-write.table(Fusion_Matrix, paste0(mainDir, subDir, "/fusion-matrix.txt"), quote = F,col.names = T,row.names = T, sep = "\t")
+write.table(Fusion_Matrix, paste0(subDir, "fusion-matrix.txt"), quote = F,col.names = T,row.names = T, sep = "\t")
 
 
 

@@ -1,5 +1,5 @@
 #### Read Onco File ####
-onco.matrix = read.delim(paste0(mainDir, subDirHist, "/", broad.hist, "_onco_matrix.txt"), 
+onco.matrix = read.delim(paste0(subDirHist, "/", broad.hist, "_onco_matrix.txt"), 
                          sep = "\t", header = T, as.is = T, check.names = F)
 
 colnames(onco.matrix) %in% colnames(final.cn.mat)

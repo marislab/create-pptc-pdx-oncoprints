@@ -3,7 +3,7 @@ library(deconstructSigs)
 
 ###add arm level dels/amps to annotation
 ifelse(broad.hist == "neuroblastoma", 
-arm <- read.delim(paste0(pptc.folder, "Manuscript/figures/oncoprints/neuroblastoma/2018-10-09-arm-lesions.txt"), 
+arm <- read.delim(paste0(dataDir, "arm-lesions.txt"), 
                   as.is = T, header = T, check.names = F), NA)
 
 clin.arm <- merge(clin.sub, arm)
@@ -91,7 +91,7 @@ heat_anno = HeatmapAnnotation(df = df_anno,
 #                            gp = c(show_legend = F, annotation_height = 1,
 #                                  axis = TRUE, border = FALSE))
 
-pdf(paste(pptc.folder,"Manuscript/figures/oncoprints/", each, "/", Sys.Date(), "-", hist, "-pdx-oncoprint-goi-mut-cn.pdf", sep = ""),
+pdf(paste0(subDirHist,"/", each, "/", Sys.Date(), "-", hist, "-pdx-oncoprint-goi-mut-cn.pdf", sep = ""),
     height = 11, width = 9)
 store.plot <- oncoPrint(mat.clean, get_type = function(x) strsplit(x, ";")[[1]],
                         #column_order = sample_order,
@@ -114,7 +114,7 @@ store.plot <- oncoPrint(mat.clean, get_type = function(x) strsplit(x, ";")[[1]],
 print(store.plot)
 
 write.table(sample_df[,c("Model", "Histology.Detailed", "Phase", "Sex")], 
-            paste0(paste(pptc.folder,"Manuscript/figures/oncoprints/", each, "/", Sys.Date(), 
+            paste0(paste0(subDirHist,"/", Sys.Date(), 
                          "-", hist, "-oncoprint-sampleorder.txt", sep = "")), sep = "\t", col.names = T, 
             row.names = F, quote = F)
 
@@ -138,7 +138,7 @@ print(ggplot(log.mut.order.df, aes(x = order, y = log.mut.order)) +
         theme(axis.text.x = element_text(angle = 90, hjust = 1)))
 
 write.table(as.data.frame(log.mut.order), 
-            paste0(pptc.folder,"Manuscript/figures/oncoprints/", each, "/", Sys.Date(), 
+            paste0(subDirHist,"/", each, "/", Sys.Date(), 
                    "-", each, "-", hist, "-oncoprint-mutorder.txt"), sep = "\t", col.names = F, 
             row.names = T, quote = F)
 dev.off()
