@@ -89,7 +89,7 @@ sort(unique(pptc.merge$Tumor_Sample_Barcode))
 source(paste0(script.folder, "load-maf-maftools.R"))
 
 ###load RNA expression matrix
-load(paste0(dataDir,"2019-02-14-PPTC_FPKM_matrix_withModelID-244.rda")) 
+load(paste0(dataDir,"2019-02-14-PPTC_FPKM_matrix_withModelID-244.rda"), verbose = T) 
 
 ###create mutational signatures burden matrix
 source(paste0(script.folder, "create-mut-sigs-matrix.R"))
