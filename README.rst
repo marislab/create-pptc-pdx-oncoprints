@@ -38,9 +38,10 @@ Pipeline
 
          # How to run:
          # Download github repository in your home directory (~/)
+         # Make sure to not clone the repository inside any other repository in your home directory
          git clone https://github.com/marislab/create-pptc-pdx-oncoprints.git
          
-         # Run script to fetch data
+         # Run script to fetch data files
          ./data-fetch-pptc-pdx-oncoprints.sh
          
          # Run script to generate oncoprints
