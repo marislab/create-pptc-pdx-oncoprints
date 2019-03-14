@@ -55,7 +55,7 @@ library(circlize)
 
 # Setting working directory
 mainDir <- "~/pptc-pdx-oncoprints/"
-script.folder <- "~/create-pptc-pdx-oncoprints/"
+script.folder <- "~/create-pptc-pdx-oncoprints/" # path to your git cloned repo
 setwd(mainDir)
 dataDir <- "~/pptc-pdx-oncoprints/data/"
 
