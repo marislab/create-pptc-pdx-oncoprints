@@ -72,11 +72,9 @@ gene.ids <- read.delim(paste0(dataDir,"2019-02-14-Hugo-Symbols-approved.txt"),
                        sep = "\t", as.is = T, header = T)
 ##load clinical file
 clin <- read.delim(paste0(dataDir, "pptc-pdx-clinical-web.txt"), as.is = T, header = T)
-clin.pptc <- subset(clin, Model.Part.of.PPTC == "yes")
-#write.table(clin.pptc, paste0(pptc.folder, "Data/clinical/2019-02-09-pdx-clinical-final-for-paper.txt"), col.names = T, row.names = F, quote = F, sep = "\t")
 
 ##specify histology categorizations
-broad.hists <- as.list(unique(clin.pptc$Histology.Oncoprints)) ## use for generation of mutation and CN matrices
+broad.hists <- as.list(unique(clin$Histology.Oncoprints)) ## use for generation of mutation and CN matrices
 
 ###load color functions
 source(paste0(script.folder, "mutation-color-function.R"))
@@ -91,7 +89,7 @@ sort(unique(pptc.merge$Tumor_Sample_Barcode))
 source(paste0(script.folder, "load-maf-maftools.R"))
 
 ###load RNA expression matrix
-rna.matrix <- readRDS(paste0(dataDir,"2019-02-14-PPTC_FPKM_matrix_withModelID-244.RDS")) 
+load(paste0(dataDir,"2019-02-14-PPTC_FPKM_matrix_withModelID-244.rda")) 
 
 ###create mutational signatures burden matrix
 source(paste0(script.folder, "create-mut-sigs-matrix.R"))
