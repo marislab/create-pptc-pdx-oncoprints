@@ -55,16 +55,14 @@ library(circlize)
 
 # Setting working directory
 mainDir <- "~/pptc-pdx-oncoprints/"
-script.folder <- "~/create-pptc-pdx-oncoprints/"
+script.folder <- "~/create-pptc-pdx-oncoprints/" # path to your git cloned repo
 setwd(mainDir)
 dataDir <- "~/pptc-pdx-oncoprints/data/"
 
 # create new directories in mainDir
 dir.create(file.path(mainDir,"onco-out"))
 subDir <- paste0(mainDir,"onco-out/")
-
-
-ifelse(!dir.exists(file.path(mainDir, subDir)), dir.create(file.path(mainDir, subDir)), "Directory exists!")
+#ifelse(!dir.exists(file.path(mainDir, subDir)), dir.create(file.path(mainDir, subDir)), "Directory exists!")
 
 
 #load file for harmonization of gene IDs
@@ -72,11 +70,10 @@ gene.ids <- read.delim(paste0(dataDir,"2019-02-14-Hugo-Symbols-approved.txt"),
                        sep = "\t", as.is = T, header = T)
 ##load clinical file
 clin <- read.delim(paste0(dataDir, "pptc-pdx-clinical-web.txt"), as.is = T, header = T)
-clin.pptc <- subset(clin, Model.Part.of.PPTC == "yes")
-#write.table(clin.pptc, paste0(pptc.folder, "Data/clinical/2019-02-09-pdx-clinical-final-for-paper.txt"), col.names = T, row.names = F, quote = F, sep = "\t")
 
 ##specify histology categorizations
-broad.hists <- as.list(unique(clin.pptc$Histology.Oncoprints)) ## use for generation of mutation and CN matrices
+#broad.hists <- as.list(unique(clin$Histology.Oncoprints)) ## use for generation of mutation and CN matrices
+broad.hists <- as.list(unique(clin$Histology.Oncoprints)) ## use for generation of mutation and CN matrices
 
 ###load color functions
 source(paste0(script.folder, "mutation-color-function.R"))
@@ -91,7 +88,7 @@ sort(unique(pptc.merge$Tumor_Sample_Barcode))
 source(paste0(script.folder, "load-maf-maftools.R"))
 
 ###load RNA expression matrix
-rna.matrix <- readRDS(paste0(dataDir,"2019-02-14-PPTC_FPKM_matrix_withModelID-244.RDS")) 
+load(paste0(dataDir,"2019-02-14-PPTC_FPKM_matrix_withModelID-244.rda"), verbose = T) 
 
 ###create mutational signatures burden matrix
 source(paste0(script.folder, "create-mut-sigs-matrix.R"))
@@ -107,13 +104,15 @@ focal.cn.mat <- read.delim(paste0(dataDir, "short_cn_matrix_fpkm1.txt"),as.is=TR
 #### Read fusion file ####
 source(paste0(script.folder, "reformat-fusion-as-matrix.R"))
 
+
 ###load gene of interest list
 for (broad.hist in broad.hists){
     print(paste0("creating ", broad.hist, " matrices and oncoprints"))
     ##create directory for results
     subDirHist <- paste0(subDir, broad.hist)
-    dir.create(file.path(subDir, broad.hist))
-    ifelse(!dir.exists(file.path(mainDir, subDirHist)), dir.create(file.path(mainDir, subDirHist)), "Directory exists!")
+    #dir.create(file.path(subDir, broad.hist))
+    ifelse(!dir.exists(file.path(subDir, broad.hist)), dir.create(file.path(subDir, broad.hist)), 
+           "Directory exists!")
     
     ##read in gene list
     goi.list <- read.delim(paste0(dataDir, broad.hist, "-goi-list.txt"), sep = "\t",
@@ -130,12 +129,10 @@ for (broad.hist in broad.hists){
   
     ###merge mut/CN and fusion matrices
     source(paste0(script.folder, "merge-mut-CN-fusion-matrices.R"))
-  
-    ###plot oncoprint
-    ifelse(broad.hist == "neuroblastoma" | broad.hist == "osteosarcoma" | broad.hist == "renal", 
-    source(paste0(script.folder, "create-complexheat-oncoprint-", broad.hist, ".R")), 
-           source(paste0(script.folder, "create-complexheat-oncoprint-other.R"))
-  )
+    
+    ##plot oncoprints
+    source(paste0(script.folder, "create-complexheat-oncoprint-all.R"))
+    
 }
 
 ##write session info
