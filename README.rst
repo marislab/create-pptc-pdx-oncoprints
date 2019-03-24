@@ -34,7 +34,16 @@ Software Requirements
 Pipeline
 ========
 
-```
-#Set up directories relevant files in the following script and run
-RUN-create-full-oncoprint.R
-```
+.. code-block:: bash
+
+         # How to run:
+         # Download github repository in your home directory (~/)
+         # Make sure to not clone the repository inside any other repository in your home directory
+         git clone https://github.com/marislab/create-pptc-pdx-oncoprints.git
+         
+         # Run script to fetch data files
+         ./data-fetch-pptc-pdx-oncoprints.sh
+         
+         # Run script to generate oncoprints
+         Rscript RUN-create-full-oncoprint.R
+

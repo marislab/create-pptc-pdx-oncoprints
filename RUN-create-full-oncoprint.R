@@ -72,7 +72,6 @@ gene.ids <- read.delim(paste0(dataDir,"2019-02-14-Hugo-Symbols-approved.txt"),
 clin <- read.delim(paste0(dataDir, "pptc-pdx-clinical-web.txt"), as.is = T, header = T)
 
 ##specify histology categorizations
-#broad.hists <- as.list(unique(clin$Histology.Oncoprints)) ## use for generation of mutation and CN matrices
 broad.hists <- as.list(unique(clin$Histology.Oncoprints)) ## use for generation of mutation and CN matrices
 
 ###load color functions
@@ -113,7 +112,6 @@ for (broad.hist in broad.hists){
     #dir.create(file.path(subDir, broad.hist))
     ifelse(!dir.exists(file.path(subDir, broad.hist)), dir.create(file.path(subDir, broad.hist)), 
            "Directory exists!")
-    
     ##read in gene list
     goi.list <- read.delim(paste0(dataDir, broad.hist, "-goi-list.txt"), sep = "\t",
                        header = F, as.is = T)
