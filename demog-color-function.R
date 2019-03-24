@@ -72,5 +72,7 @@ snpcol = c("yes" = "#FFFFE0",
 `11p15.5` = c("Loss" = "#0072B2", "LOH" = "#9FB6CD", "Unknown" ="#BEBEBE", "NA" ="#F5F5F5")
 `16q` = c("LOH" = "#9FB6CD", "partial LOH" = "#FFFFE0", "Unknown" ="#BEBEBE")
 `Xq11.2` = c("Loss" = "#0072B2", "LOH" = "#9FB6CD", "Unknown" ="#BEBEBE", "NA" ="#F5F5F5")
+`tp53_score_discrete` = c("Active" = "#FEFE62", "Modest" = "#009292", "Inactive" = "#000000", "NA" ="#BEBEBE")
+`nf1_score_discrete` = c("Active" = "#FEFE62", "Modest" = "#009292", "Inactive" = "#000000", "NA" ="#BEBEBE")
 
 col2hex("red3")

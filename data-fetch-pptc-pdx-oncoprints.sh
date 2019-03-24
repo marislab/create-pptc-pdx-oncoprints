@@ -50,7 +50,7 @@ wget --output-document='sarcoma-goi-list.txt' https://ndownloader.figshare.com/f
 wget --output-document='neuroblastoma-specific-lesions.txt' https://ndownloader.figshare.com/files/14545973
 
 # 7. Classifier scores
-wget --output-document="classifier_scores_with_clinical_and_alterations.tsv" https://ndownloader.figshare.com/files/14545970
+wget --output-document="classifier_scores.tsv" https://ndownloader.figshare.com/files/14679884
 
 # 8. arm leisons
 wget --output-document='arm-lesions.txt' https://ndownloader.figshare.com/files/14545967

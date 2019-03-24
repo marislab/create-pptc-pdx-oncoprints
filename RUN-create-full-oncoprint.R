@@ -62,9 +62,7 @@ dataDir <- "~/pptc-pdx-oncoprints/data/"
 # create new directories in mainDir
 dir.create(file.path(mainDir,"onco-out"))
 subDir <- paste0(mainDir,"onco-out/")
-
-
-ifelse(!dir.exists(file.path(mainDir, subDir)), dir.create(file.path(mainDir, subDir)), "Directory exists!")
+#ifelse(!dir.exists(file.path(mainDir, subDir)), dir.create(file.path(mainDir, subDir)), "Directory exists!")
 
 
 #load file for harmonization of gene IDs
@@ -105,14 +103,15 @@ focal.cn.mat <- read.delim(paste0(dataDir, "short_cn_matrix_fpkm1.txt"),as.is=TR
 #### Read fusion file ####
 source(paste0(script.folder, "reformat-fusion-as-matrix.R"))
 
+
 ###load gene of interest list
 for (broad.hist in broad.hists){
     print(paste0("creating ", broad.hist, " matrices and oncoprints"))
     ##create directory for results
     subDirHist <- paste0(subDir, broad.hist)
     #dir.create(file.path(subDir, broad.hist))
-    ifelse(!dir.exists(file.path(subDir, broad.hist)), dir.create(file.path(subDir, broad.hist)), "Directory exists!")
-    
+    ifelse(!dir.exists(file.path(subDir, broad.hist)), dir.create(file.path(subDir, broad.hist)), 
+           "Directory exists!")
     ##read in gene list
     goi.list <- read.delim(paste0(dataDir, broad.hist, "-goi-list.txt"), sep = "\t",
                        header = F, as.is = T)
@@ -128,12 +127,10 @@ for (broad.hist in broad.hists){
   
     ###merge mut/CN and fusion matrices
     source(paste0(script.folder, "merge-mut-CN-fusion-matrices.R"))
-  
-    ###plot oncoprint
-    ifelse(broad.hist == "neuroblastoma" | broad.hist == "osteosarcoma" | broad.hist == "renal", 
-    source(paste0(script.folder, "create-complexheat-oncoprint-", broad.hist, ".R")), 
-           source(paste0(script.folder, "create-complexheat-oncoprint-other.R"))
-  )
+    
+    ##plot oncoprints
+    source(paste0(script.folder, "create-complexheat-oncoprint-all.R"))
+    
 }
 
 ##write session info
