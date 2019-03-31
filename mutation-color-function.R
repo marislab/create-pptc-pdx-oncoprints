@@ -1,5 +1,5 @@
-library(gplots)
-library(ComplexHeatmap)
+#library(gplots)
+#library(ComplexHeatmap)
 
 col2hex(c('mediumseagreen', 'orange', 'green2', 'hotpink',
           'lightslateblue', 'midnightblue', 'gray33', 'turquoise3',
@@ -41,7 +41,6 @@ mut.labels = c("Missense Mutation",
         "Start Codon Deletion",
         "RNA Fusion",
         "Multi-Hit",
-        #"Deletion",
         "Homozygous Deletion",
         "Hemizygous Deletion",
         "Focal Amplification",
@@ -50,7 +49,6 @@ mut.labels = c("Missense Mutation",
         "High Level Gain",
         "Multi-Hit RNA Fusion")
 
-#bg.col <- "#f5f5f5"
 
 alter_fun = function(x, y, w, h, v) {
             if(v["Missense_Mutation"]) grid.rect(x, y, w*0.9, h*0.9, gp = gpar(fill = col["Missense_Mutation"], col = bg.col))
@@ -66,7 +64,6 @@ alter_fun = function(x, y, w, h, v) {
             if(v["Start_Codon_Del"]) grid.rect(x, y, w*0.9, h*0.4, gp = gpar(fill = col["Start_Codon_Del"], col = bg.col))
             if(v["Fusion"]) grid.rect(x, y, w*0.9, h*0.4, gp = gpar(fill = col["Fusion"], col = bg.col))
             if(v["Multi_Hit"]) grid.rect(x, y, w*0.9, h*0.4, gp = gpar(fill = col["Multi_Hit"], col = bg.col))
-            #if(v["Deletion"]) grid.rect(x, y, w*0.9, h*0.4, gp = gpar(fill = col["Deletion"], col = bg.col))
             if(v["Hom_Deletion"]) grid.rect(x, y, w*0.9, h*0.4, gp = gpar(fill = col["Hom_Deletion"], col = bg.col))
             if(v["Hem_Deletion"]) grid.rect(x, y, w*0.9, h*0.4, gp = gpar(fill = col["Hem_Deletion"], col = bg.col))
             if(v["Amplification"]) grid.rect(x, y, w*0.9, h*0.4, gp = gpar(fill = col["Amplification"], col = bg.col))

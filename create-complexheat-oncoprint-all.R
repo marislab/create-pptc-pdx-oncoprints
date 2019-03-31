@@ -1,4 +1,4 @@
-require(circlize)
+#require(circlize)
 clin.sub <- subset(clin, Have.maf == "yes")
 
 ###add arm level dels/amps to annotation if NBL or renal
@@ -68,7 +68,7 @@ sample_order <- rownames(sample_df)
  df_tp53 <- sample_df[colnames(mat.clean), "tp53_score_discrete", drop = FALSE]
  df_nf1 <- sample_df[colnames(mat.clean), "nf1_score_discrete", drop = FALSE]
  df_age <- sample_df[colnames(mat.clean), "Age", drop = FALSE]
- 
+
 if(broad.hist != "neuroblastoma" & broad.hist != "renal") {
   #combine all
   df_anno <- cbind(df_hist, df_phase, df_sex, df_age, df_nf1, df_tp53)
@@ -83,9 +83,6 @@ if(broad.hist != "neuroblastoma" & broad.hist != "renal") {
                                            nf1_score_discrete = nf1_score_discrete),
                                 annotation_height = 1,
                                 na_col = "whitesmoke")
-  bar_anno = HeatmapAnnotation(mutations = anno_barplot(log.mut.order), 
-                               gp = c(show_legend = F, annotation_height = 1,
-                                      axis = TRUE, border = FALSE))
 }
  
 if(broad.hist == "neuroblastoma") {

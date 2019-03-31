@@ -1,47 +1,20 @@
-###create cohesive oncoprints
+###### create cohesive oncoprints to regenerate Figure 2########
+#
+#     Authors: Jo Lynne Rokita, Alvin Farrel, Khushbu Patel     
+#
+################################################################
+
+# Set working directory
+mainDir <- "~/pptc-pdx-oncoprints/"
+script.folder <- "~/create-pptc-pdx-oncoprints/" # path to your git cloned repo
+setwd(mainDir)
+dataDir <- "~/pptc-pdx-oncoprints/data/"
 
 ####Dependencies
-#devtools::install_github(repo = "jharenza/maftools")
-#install.extras('NMF')
-if (!require("devtools")){
-  install.packages("devtools", repos='http://cran.us.r-project.org', dependencies = TRUE)
-}
-if (!require("NMF")){
-  install.packages("NMF", repos='http://cran.us.r-project.org', dependencies = TRUE)
-}
-if (!require("rmatio")){
-  install.packages("rmatio", repos='http://cran.us.r-project.org', dependencies = TRUE)
-}
-if (!require("dplyr")){
-  install.packages("dplyr", repos='http://cran.us.r-project.org', dependencies = TRUE)
-}
-if (!require("tidyr")){
-  install.packages("tidyr", repos='http://cran.us.r-project.org', dependencies = TRUE)
-}
-if (!require("ggplot2")){
-  install.packages("ggplot2", repos='http://cran.us.r-project.org', dependencies = TRUE)
-}
-if (!require("data.table")){
-  install.packages("data.table", repos='http://cran.us.r-project.org', dependencies = TRUE)
-}
-if (!require("BSgenome.Hsapiens.UCSC.hg19")){
-  install.packages("https://bioconductor.org/packages/release/data/annotation/src/contrib/BSgenome.Hsapiens.UCSC.hg19_1.4.0.tar.gz", repo=NULL, type="source", dependencies = TRUE)
-}
-if (!require("ComplexHeatmap")){
-  install.packages("https://bioconductor.org/packages/release/bioc/src/contrib/ComplexHeatmap_1.20.0.tar.gz", repo=NULL, type="source",dependencies = TRUE)
-}
-if (!require("deconstructSigs")){
-  install.packages("https://cran.r-project.org/src/contrib/deconstructSigs_1.8.0.tar.gz", repo=NULL, type="source", dependencies = TRUE)
-}
-if (!require("circlize")){
-  install.packages("circlize", repos='http://cran.us.r-project.org', dependencies = TRUE)
-}
-
-devtools::install_github(repo = "jharenza/maftools")
+source(paste0(script.folder, "install-packages.R"))
 
 library(devtools)
 library(maftools)
-library(NMF)
 library(rmatio)
 library(BSgenome.Hsapiens.UCSC.hg19)
 library(dplyr)
@@ -51,18 +24,14 @@ library(ComplexHeatmap)
 library(deconstructSigs)
 library(data.table)
 library(circlize)
+library(gplots)
 
 
-# Setting working directory
-mainDir <- "~/pptc-pdx-oncoprints/"
-script.folder <- "~/create-pptc-pdx-oncoprints/" # path to your git cloned repo
-setwd(mainDir)
-dataDir <- "~/pptc-pdx-oncoprints/data/"
+
 
 # create new directories in mainDir
-dir.create(file.path(mainDir,"onco-out"))
 subDir <- paste0(mainDir,"onco-out/")
-#ifelse(!dir.exists(file.path(mainDir, subDir)), dir.create(file.path(mainDir, subDir)), "Directory exists!")
+ifelse(!dir.exists(file.path(subDir)), dir.create(file.path(subDir)), "Directory exists!")
 
 
 #load file for harmonization of gene IDs
@@ -81,8 +50,6 @@ source(paste0(script.folder, "demog-color-function.R"))
 ###load MAF file into WD and into maftools
 load(paste0(dataDir,"2019-02-14-allpdx-clean-maf-240.rda"), verbose = T)
 
-sort(unique(pptc.merge$Tumor_Sample_Barcode))
-
 #pptc.merge <- rna.maf
 source(paste0(script.folder, "load-maf-maftools.R"))
 
@@ -91,11 +58,6 @@ load(paste0(dataDir,"2019-02-14-PPTC_FPKM_matrix_withModelID-244.rda"), verbose 
 
 ###create mutational signatures burden matrix
 source(paste0(script.folder, "create-mut-sigs-matrix.R"))
-
-###use GISTIC output for hemizygous deletions
-#gistic.out <- read.delim(paste0(pptc.folder, "Data/GISTIC-results/all-pdx/2018-08-09-gistic-results-256pdx-noXY-snpfast2-nomirna/all_thresholded.by_genes.txt"),as.is=TRUE,check.names=FALSE)
-#colnames(gistic.out)[colnames(gistic.out) == "IC-2264PNET"] <- "IC-2664PNET"
-###fix IC-2664
 
 ###focal CN matrix
 focal.cn.mat <- read.delim(paste0(dataDir, "short_cn_matrix_fpkm1.txt"),as.is=TRUE,check.names=FALSE)

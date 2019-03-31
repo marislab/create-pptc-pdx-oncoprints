@@ -75,4 +75,3 @@ snpcol = c("yes" = "#FFFFE0",
 `tp53_score_discrete` = c("Active" = "#FEFE62", "Modest" = "#009292", "Inactive" = "#000000", "NA" ="#BEBEBE")
 `nf1_score_discrete` = c("Active" = "#FEFE62", "Modest" = "#009292", "Inactive" = "#000000", "NA" ="#BEBEBE")
 
-col2hex("red3")
