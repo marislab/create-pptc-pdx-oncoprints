@@ -19,17 +19,31 @@ Introduction
 
 Here, we provide scripts to enable reproducible generation of Manuscript Figure 2: oncoprints by PDX histology. This repo contains code for:
 
-1. 
-2. 
+1. Create expanded oncoprint matrices used to reproduce Figure 2
 
 Details
 =======
 
-- add R script: description
+- data-fetch-pptc-pdx-oncoprints.sh
+- RUN-create-full-oncoprint.R
+- install-packages.R		
+- demog-color-function.R
+- mutation-color-function.R
+- reformat-fusion-as-matrix.R
+- load-maf-maftools.R
+- create-mut-sigs-matrix.R		
+- create-mut-matrices.R
+- create-CN-matrices.R			
+- merge-mut-CN-matrices.R
+- merge-CN-gistic-matrices-new.R
+- create-complexheat-oncoprint-all.R	
+- merge-mut-CN-fusion-matrices.R
 
 
 Software Requirements
 =====================
+
+R 3.4.3
 
 Pipeline
 ========
