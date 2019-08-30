@@ -26,7 +26,7 @@ cd ~/pptc-pdx-oncoprints/data/
 wget --output-document='2019-02-14-Hugo-Symbols-approved.txt' https://ndownloader.figshare.com/files/14460317
 
 # 2. Clinical file
-wget --output-document='pptc-pdx-clinical-web.txt' https://ndownloader.figshare.com/files/14508536
+wget --output-document='pptc-pdx-clinical-web.txt' https://ndownloader.figshare.com/files/16257497
 
 # 3. Download DNA MAF file
 wget --output-document='2019-02-14-allpdx-clean-maf-240.rda' https://ndownloader.figshare.com/files/14414198
@@ -35,7 +35,7 @@ wget --output-document='2019-02-14-allpdx-clean-maf-240.rda' https://ndownloader
 wget --output-document='2019-02-14-PPTC_FPKM_matrix_withModelID-244.rda' https://ndownloader.figshare.com/files/14452985
 
 # 4. focal CN matrix
-wget --output-document='short_cn_matrix_fpkm1.txt' https://ndownloader.figshare.com/files/14545979
+wget --output-document='short_cn_matrix_fpkm1.txt' https://ndownloader.figshare.com/files/16603340
 
 # 5. download gene lists
 wget --output-document='leukemia-goi-list.txt' https://ndownloader.figshare.com/files/14541185

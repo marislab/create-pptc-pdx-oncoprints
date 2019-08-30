@@ -1,18 +1,9 @@
-##add clinical data
-clin.maf = clin
-clin.hist <- clin.maf[,c("Model", "Histology.Detailed")]
 
-##maftools recognizes TSB as ID, so swap with model for accurate matrix printing
-colnames(clin.maf)[colnames(clin.maf) == "Tumor_Sample_Barcode"] <- "TSB"
-colnames(clin.maf)[colnames(clin.maf) == "Model"] <- "Tumor_Sample_Barcode"
-
-#clin.pptc <- subset(clin.maf, Model.Part.of.PPTC == "yes")
-
-
+###read maf one, get mut per mb
 maf = read.maf(maf = pptc.merge, clinicalData = clin.maf, vc_nonSyn = c("Frame_Shift_Del", 
-                                                                         "Frame_Shift_Ins", "Splice_Site", "Translation_Start_Site","Nonsense_Mutation", 
-                                                                         "Nonstop_Mutation", "In_Frame_Del","In_Frame_Ins", "Missense_Mutation",  
-                                                                         "Stop_Codon_Ins", "Start_Codon_Del"))
+                                                                        "Frame_Shift_Ins", "Splice_Site", "Translation_Start_Site","Nonsense_Mutation", 
+                                                                        "Nonstop_Mutation", "In_Frame_Del","In_Frame_Ins", "Missense_Mutation",  
+                                                                        "Stop_Codon_Ins", "Start_Codon_Del", "Fusion"))
 
 load <- getSampleSummary(maf)
 load$subs <- load$Missense_Mutation + load$Nonsense_Mutation
@@ -27,3 +18,15 @@ load.hist <- merge(clin.hist, load)
 ##write in sort order most to least Mut per MB
 write.table(load.hist[order(-load.hist$MutperMB),], paste0(subDir, Sys.Date(), "-mutations-per-model.txt"), 
             sep = "\t", col.names = T, row.names = F, quote = F)
+
+#cn.df.complete.formaf <- cn.df.complete
+#cn.df.complete.formaf$Variant_Classification <- gsub("Amplification", "Amp_Gene", cn.df.complete.formaf$Variant_Classification)
+#cn.df.complete.formaf$Variant_Type <- ifelse(cn.df.complete.formaf$Variant_Classification == "Amp_Gene", "INS", "DEL")
+#maf.fus.cn <- bind_rows(maf.fus, cn.df.complete.formaf)
+#subset(maf.fus.cn[,c("Hugo_Symbol", "Tumor_Sample_Barcode", "Variant_Classification", "Variant_Type")], Hugo_Symbol == "MYCN" | Hugo_Symbol == "TP53")
+###read maf with combined fusions
+maf2 = read.maf(maf = maf.fus, clinicalData = clin.maf, cnTable = cn.df.complete,
+                vc_nonSyn = c("Frame_Shift_Del", "Frame_Shift_Ins", "Splice_Site", "Translation_Start_Site","Nonsense_Mutation", 
+                                                                      "Nonstop_Mutation", "In_Frame_Del","In_Frame_Ins", "Missense_Mutation",  
+                                                                      "Stop_Codon_Ins", "Start_Codon_Del", "Fusion", "Multi_Hit", "Hom_Deletion",
+                                                                      "Hem_Deletion", "Amplification", "Multi_Hit_Fusion"))

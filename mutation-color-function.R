@@ -6,10 +6,10 @@ col2hex(c('mediumseagreen', 'orange', 'green2', 'hotpink',
           'lightpink', 'lightsalmon', 'khaki1',
           'purple', 'black', 'dodgerblue2', 'red', 'cornflowerblue', 'lightcoral', 'red', 'mistyrose', 'lightsteelblue1'))
 
-col = c("Missense_Mutation" = "#009E73", 
+colores = c("Missense_Mutation" = "#35978f", 
         "Nonsense_Mutation" = "#000000",
         "Frame_Shift_Del" = "#56B4E9", 
-        "Frame_Shift_Ins" = "#CC79A7", 
+        "Frame_Shift_Ins" = "#FFBBFF", 
         "Splice_Site" = "#F0E442",
         "Translation_Start_Site" = "#191970",
         "Nonstop_Mutation" = "#545454",
@@ -17,16 +17,16 @@ col = c("Missense_Mutation" = "#009E73",
         "In_Frame_Ins" = "#FFE4E1",
         "Stop_Codon_Ins" = "#CC79A7",
         "Start_Codon_Del" = "#56B4E9",
-        "Fusion" = "#A020F0",
-        "Multi_Hit" = "#E69F00",
+        "Fusion" = "#7B68EE",
+        "Multi_Hit" = "#f46d43",
         #"Deletion" = "#0072B2",
-        "Hom_Deletion" = "#0072B2",
-        "Hem_Deletion" = "#9FB6CD",
-        "Amplification" = "#D55E00",
+        "Hom_Deletion" = "#313695",
+        "Hem_Deletion" = "#abd9e9",
+        "Amplification" = "#c51b7d",
         "Loss" = "#0072B2",
         "Gain" = "#D55E00",
         "High_Level_Gain" = "#FF0000",
-        "Multi_Hit_Fusion" = "381373")
+        "Multi_Hit_Fusion" = "#381373")
 
 mut.labels = c("Missense Mutation", 
         "Nonsense Mutation",
@@ -72,3 +72,8 @@ alter_fun = function(x, y, w, h, v) {
             if(v["High_Level_Gain"]) grid.rect(x, y, w*0.9, h*0.4, gp = gpar(fill = col["High_Level_Gain"], col = bg.col))
              if(v["Multi_Hit_Fusion"]) grid.rect(x, y, w*0.9, h*0.4, gp = gpar(fill = col["Multi_Hit_Fusion"], col = bg.col))
 }
+
+
+
+
+
