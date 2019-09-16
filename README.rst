@@ -24,20 +24,24 @@ Here, we provide scripts to enable reproducible generation of Manuscript Figure 
 Details
 =======
 
-- data-fetch-pptc-pdx-oncoprints.sh
-- RUN-create-full-oncoprint.R
-- install-packages.R		
-- demog-color-function.R
-- mutation-color-function.R
-- reformat-fusion-as-matrix.R
+- RUN-create-full-oncoprint-revision.R    
 - load-maf-maftools.R
-- create-mut-sigs-matrix.R		
-- create-mut-matrices.R
-- create-CN-matrices.R			
-- merge-mut-CN-matrices.R
-- merge-CN-gistic-matrices-new.R
-- create-complexheat-oncoprint-all.R	
+- cluster-scores.R                        
 - merge-mut-CN-fusion-matrices.R
+- co-oncoplots.R                          
+- merge-mut-CN-matrices.R
+- create-CN-matrices.R                    
+- mutation-color-function.R
+- create-complexheat-oncoprint-revision.R 
+- reformat-CN-matrix-to-df.R
+- create-mut-matrices.R                   
+- reformat-clinical.R
+- create-mut-sigs-matrix.R                
+- reformat-fusion-as-matrix.R
+- demog-color-function.R                  
+- reformat-fusion-for-maf-revision.R
+- install-packages.R
+
 
 
 Software Requirements
@@ -52,12 +56,8 @@ Pipeline
 
          # How to run:
          # Download github repository in your home directory (~/)
-         # Make sure to not clone the repository inside any other repository in your home directory
          git clone https://github.com/marislab/create-pptc-pdx-oncoprints.git
-         
-         # Run script to fetch data files
-         ./data-fetch-pptc-pdx-oncoprints.sh
-         
-         # Run script to generate oncoprints
-         Rscript RUN-create-full-oncoprint.R
+
+         # Run script to create pie chart
+         Rscript ~/create-pptc-pdx-oncoprints/R/RUN-create-full-oncoprint-revision.R 
 

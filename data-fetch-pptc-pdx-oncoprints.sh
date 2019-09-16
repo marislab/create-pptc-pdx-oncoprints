@@ -11,11 +11,7 @@
 # Expression matrix = 2019-02-14-PPTC_FPKM_matrix_withModelID-244.RDS
 # focal CN matrix = 2019-02-27-short_cn_matrix_fpkm1.txt
 # genelists
-# neuroblastoma specific leisons = 2018-12-06-neuroblastoma-specific-lesions.txt
 # classifier scores = classifier_scores_with_clinical_and_alterations.tsv
-# arm lesions = 2018-10-09-arm-lesions.txt
-# read collapsed fusion file = DriverFusions_Collapsed.txt
-# renal specific leisons = renal-specific-lesions.txt
 
 cd ~
 mkdir -p pptc-pdx-oncoprints/data/
@@ -46,17 +42,5 @@ wget --output-document='neuroblastoma-goi-list.txt' https://ndownloader.figshare
 wget --output-document='rare-goi-list.txt' https://ndownloader.figshare.com/files/14541194
 wget --output-document='sarcoma-goi-list.txt' https://ndownloader.figshare.com/files/14541200
 
-# 6. Neuroblastoma specific leisons
-wget --output-document='neuroblastoma-specific-lesions.txt' https://ndownloader.figshare.com/files/14545973
-
-# 7. Classifier scores
+# 6. Classifier scores
 wget --output-document="classifier_scores.tsv" https://ndownloader.figshare.com/files/14679884
-
-# 8. arm leisons
-wget --output-document='arm-lesions.txt' https://ndownloader.figshare.com/files/14545967
-
-# 9. Driverfusions collapsed
-wget --output-document='DriverFusions_Collapsed.txt' https://ndownloader.figshare.com/files/14545976
-
-#10. renal specific leisons
-wget --output-document='renal-specific-lesions.txt' https://ndownloader.figshare.com/files/14550614
