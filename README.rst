@@ -17,9 +17,9 @@ PPTC PDX Oncoprint Generation
 Introduction
 ============
 
-Here, we provide scripts to enable reproducible generation of Manuscript Figure 2: oncoprints by PDX histology. This repo contains code for:
+Here, we provide scripts to enable reproducible generation of Manuscript Figure 2: oncoprints by PDX histology and Figure 3: co-oncoplots for diagnosis/relapse samples in neuroblastoma, BCP-ALL, T-ALL, and osteosarcoma. This repo contains code for:
 
-1. Create expanded oncoprint matrices used to reproduce Figure 2
+1. Create expanded oncoprint matrices used to reproduces Figure 2 and 3
 
 Details
 =======
