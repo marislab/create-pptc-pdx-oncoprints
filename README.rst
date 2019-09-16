@@ -57,7 +57,9 @@ Pipeline
          # How to run:
          # Download github repository in your home directory (~/)
          git clone https://github.com/marislab/create-pptc-pdx-oncoprints.git
-
+        
+         #
+         brew update && brew install llvm
          # Run script to create pie chart
          Rscript ~/create-pptc-pdx-oncoprints/R/RUN-create-full-oncoprint-revision.R 
 

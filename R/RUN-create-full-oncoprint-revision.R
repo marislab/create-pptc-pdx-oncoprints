@@ -19,7 +19,6 @@ setwd(mainDir)
 ####Dependencies
 source(paste0(script.folder, "install-packages.R"))
 
-library(devtools)
 library(maftools)
 library(rmatio)
 library(BSgenome.Hsapiens.UCSC.hg19)
