@@ -1,0 +1,19 @@
+NCH-RBD-4	ICb-5108ATRT	ICb-L1115ATRT	ICb-10593ATRT	KT-12	BT-29	ICb-1218ATRT	ICb-6753ATRT	ICb-9508MB	ICb-5610MB	NCH-MB-1	ICb-1338MB	ICB-1744MB	ICb-2123MB	ICb-2555MB	ICb-3130MB	IC-6634GBM	NCH-PXA-1	IC-2664PNET	IC-1621GBM	IC-3635PXA	NCH-MN-1	IC-3704GBM	ICb-9850PNET	IC-22909PNET-rIII	IBs-2373PNET	ICb-1343ENB	BT-27	IC-1499EPB	ICb-S1129MB	IC-9811EPN	ICb-5323EPN	IC-9635EPN	ICb-10614EPN	ICb-2002EPN	NCH-RBD-2	KT-14	NCH-RBD-1	G401
+SMARCB1	Hom_Deletion	Hom_Deletion	Hom_Deletion	Multi_Hit	Multi_Hit	Multi_Hit	Multi_Hit	Hom_Deletion					0	0	0	0	Hem_Deletion	Hem_Deletion	Hem_Deletion				0	Multi_Hit	Multi_Hit			0	0	0					0	Hom_Deletion	Hom_Deletion	Hom_Deletion	Hom_Deletion
+TP53									Missense_Mutation	Missense_Mutation	Missense_Mutation		0	0	0	0	Missense_Mutation	Nonsense_Mutation		Missense_Mutation			0					0	0	0					0				
+CDKN2A									Hom_Deletion				0	0	0	0	Hom_Deletion				Hom_Deletion	Hom_Deletion	0					0	0	0	Hom_Deletion				0	Hom_Deletion			
+CDKN2B									Hom_Deletion				0	0	0	0	Hom_Deletion				Hom_Deletion	Hom_Deletion	0					0	0	0	Hom_Deletion				0	Hom_Deletion			
+SETD2	Missense_Mutation	Missense_Mutation	Missense_Mutation									Missense_Mutation	0	0	0	0				Missense_Mutation			0					0	0	0					0				
+MYCN										Amplification			0	0	0	0	Amplification		Amplification				0					0	0	0		Missense_Mutation			0		Missense_Mutation		
+MSH2				Missense_Mutation	Missense_Mutation								0	0	0	0				Nonsense_Mutation			0					0	0	0			Missense_Mutation		0				
+CIC													0	0	0	0				Missense_Mutation			0	Fusion				0	0	0					0				
+ATRX													0	0	0	0			Missense_Mutation				0					0	0	0					0			Missense_Mutation	
+BRAF													0	0	0	0					Missense_Mutation	Missense_Mutation	0					0	0	0					0				
+CFAP300													0	0	0	0							0					0	0	0			Fusion	Fusion	0				
+SMARCA4													0	0	0	0				Frame_Shift_Ins			0					0	0	0					0	Nonsense_Mutation			
+MIR519C													0	0	0	0							0			Amplification	Amplification	0	0	0					0				
+NF1													0	0	0	0				Multi_Hit			0					0	0	0					0				
+POLE													0	0	0	0				Multi_Hit			0					0	0	0					0				
+CTNNB1											Missense_Mutation		0	0	0	0							0					0	0	0					0				
+FGFR1	Missense_Mutation												0	0	0	0							0					0	0	0					0				
+ID2													0	0	0	0			Amplification				0					0	0	0					0				

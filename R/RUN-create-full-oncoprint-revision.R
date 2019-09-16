@@ -6,7 +6,6 @@
 
 # working directory (created with git clone)
 mainDir <- "~/create-pptc-pdx-oncoprints/"
-mainDir <- "~/Documents/GitHub/create-pptc-pdx-oncoprints/"
 dataDir <- paste0(mainDir,"data/")
 # set path to your git cloned repo
 script.folder <- paste0(mainDir, "R/") 

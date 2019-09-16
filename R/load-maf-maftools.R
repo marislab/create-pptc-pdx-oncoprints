@@ -19,12 +19,7 @@ load.hist <- merge(clin.hist, load)
 write.table(load.hist[order(-load.hist$MutperMB),], paste0(subDir, Sys.Date(), "-mutations-per-model.txt"), 
             sep = "\t", col.names = T, row.names = F, quote = F)
 
-#cn.df.complete.formaf <- cn.df.complete
-#cn.df.complete.formaf$Variant_Classification <- gsub("Amplification", "Amp_Gene", cn.df.complete.formaf$Variant_Classification)
-#cn.df.complete.formaf$Variant_Type <- ifelse(cn.df.complete.formaf$Variant_Classification == "Amp_Gene", "INS", "DEL")
-#maf.fus.cn <- bind_rows(maf.fus, cn.df.complete.formaf)
-#subset(maf.fus.cn[,c("Hugo_Symbol", "Tumor_Sample_Barcode", "Variant_Classification", "Variant_Type")], Hugo_Symbol == "MYCN" | Hugo_Symbol == "TP53")
-###read maf with combined fusions
+###read maf with combined fusions, add CN as a cnTABLE
 ###must use removeDup variants == T in order to retain multi-hit fusions
 maf2 = read.maf(maf = maf.fus, clinicalData = clin.maf, cnTable = cn.df.complete, removeDuplicatedVariants = F,
                 vc_nonSyn = c("Frame_Shift_Del", "Frame_Shift_Ins", "Splice_Site", "Translation_Start_Site","Nonsense_Mutation", 
