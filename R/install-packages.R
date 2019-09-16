@@ -15,10 +15,10 @@ if (!require("tidyr")){
 if (!require("ggplot2")){
   install.packages("ggplot2", repos='http://cran.us.r-project.org', dependencies = TRUE)
 }
-#if (!require("data.table")){
- # url <- "https://cran.r-project.org/src/contrib/Archive/data.table/data.table_1.2.tar.gz"
-#  install.packages(url, repos=NULL, dependencies = TRUE, type = "source")
-#}
+if (!require("data.table")){
+  url <- "https://cran.r-project.org/src/contrib/Archive/data.table/data.table_1.2.tar.gz"
+  install.packages(url, repos=NULL, dependencies = TRUE, type = "source")
+}
 if (!require("BSgenome.Hsapiens.UCSC.hg19")){
   install.packages("https://bioconductor.org/packages/release/data/annotation/src/contrib/BSgenome.Hsapiens.UCSC.hg19_1.4.0.tar.gz", repo=NULL, type="source", dependencies = TRUE)
 }
