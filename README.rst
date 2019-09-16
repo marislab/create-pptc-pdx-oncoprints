@@ -60,4 +60,9 @@ Pipeline
    
          # Run script to create pie chart
          Rscript ~/create-pptc-pdx-oncoprints/R/RUN-create-full-oncoprint-revision.R 
+         
+Results
+========
+
+Results will appear in the onco-out folder
 
