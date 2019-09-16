@@ -19,18 +19,6 @@ setwd(mainDir)
 ####Dependencies
 source(paste0(script.folder, "install-packages.R"))
 
-library(maftools)
-library(rmatio)
-library(BSgenome.Hsapiens.UCSC.hg19)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(deconstructSigs)
-library(data.table)
-library(circlize)
-library(gplots)
-library(reshape)
-
 
 # create new directories in mainDir
 subDir <- paste0(mainDir,"onco-out/")
