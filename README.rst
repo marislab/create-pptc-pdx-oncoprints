@@ -7,7 +7,7 @@ PPTC PDX Oncoprint Generation
 :authors: Jo Lynne Rokita, Alvin Farrel, Khushbu Patel
 :contact: Jo Lynne Rokita (rokita@email.chop.edu)
 :organization: CHOP
-:status: In-process
+:status: Complete
 :date: |date|
 
 .. meta::
